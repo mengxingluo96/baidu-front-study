@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let scores = ["88", "90", "100", "45", "60", "98", "32", "99", "80"];
+
+    let socreSum = 0;
+
+    /**
+     * @description 计算学生的总分数
+     * @param {array} scores
+     * @return {number} 学生的总分数
+     */
+    function getTotalScore(scores) {
+
+        scores.forEach(element => {
+            // console.log(Number(element))
+            socreSum += Number(element);
+        });
+
+        return socreSum;
+    }
+
+    /**
+     * @description 获得学生的平均分
+     * @param {array} scores
+     * @return {number} 学生的平均分
+     */
+    function getAverageScore(scores) {
+        return socreSum / scores.length;
+    }
+
+    /**
+     * @description 获得挂科的分数
+     * @param {array} scores
+     * @return {array} 返回没有及格的分数
+     */
+    function getFailScores(scores) {
+        let failArr = scores.filter(function (num) {
+            return Number(num) < 60;
+        })
+
+        return failArr;
+    }
+
+    /**
+     * @description 获得加五分之后的成绩单，如果加五分之后，分数超过了100，就取100分
+     * @param {array} scores
+     * @return {array} 新的成绩单
+     */
+    function getAddFiveScores(scores) {
+        let newArr = scores.map(function (num) {
+            return (Number(num) + 5) > 100 ? 100 : (Number(num) + 5);
+        });
+
+        return newArr;
+    }
+
+    /**
+     * @description 计算学生奖学金
+     * @param {array} scores
+     * @return { number} 奖学金
+     */
+    function getPrize(scores) {
+        let priceArr = scores.filter(function (num) {
+            return Number(num) > 90;
+        })
+
+        return priceArr.length * 100;
+    }
+
+    console.log(getTotalScore(scores));
+    console.log(getAverageScore(scores));
+    console.log(getFailScores(scores));
+    console.log(getAddFiveScores(scores));
+    console.log(getPrize(scores));
+
+</script>
+
+</html>

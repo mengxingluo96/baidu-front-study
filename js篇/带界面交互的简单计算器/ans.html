@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator {
+            margin: 10px 300px;
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            border: 1px solid black;
+            /* border-radius: 10px; */
+        }
+
+        .viewer {
+            width: 100%;
+            height: 200px;
+            background-color: #a5a7db;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .oldRes {
+            line-height: 100px;
+
+            /* width: 200px;
+            height: 200px;
+            border: 1px solid green;  */
+
+            position: absolute;
+            top: -50px;
+            right: 10px;
+            color: gray;
+
+            font-size: 40px;
+        }
+
+        .result {
+            line-height: 100px;
+            /* border: 1px solid green;  */
+            position: absolute;
+            top: 0;
+            right: 10px;
+
+            font-size: 60px;
+        }
+
+        .allBtn {
+            width: 100%;
+            height: 400px;
+            background-color: #4e509d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .headerBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* margin-left: 20px; */
+
+            /* border: 1px solid blue; */
+            width: 100%;
+            height: 90px;
+
+            display: grid;
+            grid-auto-columns: 100px;
+            grid-auto-rows: 80px;
+            /* grid-gap: 10px; */
+        }
+
+        .footerBox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* border: 1px solid orange; */
+
+            width: 100%;
+            height: 310px;
+
+            display: grid;
+            grid-auto-columns: 100px;
+            grid-auto-rows: 80px;
+        }
+
+        .item {
+            margin: 10px;
+            height: 60px;
+            border: 1px solid red;
+            border-radius: 30px;
+
+            line-height: 60px;
+            text-align: center;
+            font-size: 26px;
+
+            background-color: #e1d4e8;
+        }
+
+        .item2 {
+            border: 1px solid red;
+            border-radius: 40px;
+            height: 60px;
+            margin: 10px;
+            margin-top: 0;
+
+            line-height: 60px;
+            text-align: center;
+            font-size: 26px;
+
+            background-color: #bd8d2b;
+        }
+
+        .item3 {
+            margin: 10px;
+            margin-top: 0;
+            width: 80px;
+            height: 300px;
+            border: 1px solid red;
+            border-radius: 30px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            line-height: 300px;
+            text-align: center;
+            font-size: 26px;
+
+            background-color: #219097;
+        }
+
+        .item:nth-child(1) {
+            grid-column-start: 1;
+        }
+
+        .item:nth-child(2) {
+            grid-column-start: 2;
+        }
+
+        .item:nth-child(3) {
+            grid-column-start: 3;
+        }
+
+        .item:nth-child(4) {
+            grid-column-start: 4;
+        }
+
+        .item2:nth-child(1) {
+            grid-column-start: 1;
+        }
+
+        .item2:nth-child(2) {
+            grid-column-start: 2;
+        }
+
+        .item2:nth-child(3) {
+            grid-column-start: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="viewer">
+            <p class="oldRes"></p>
+            <p class="result">0</p>
+        </div>
+
+        <div class="allBtn">
+            <div class="headerBox">
+                <div class="item">+</div>
+                <div class="item">-</div>
+                <div class="item">x</div>
+                <div class="item">/</div>
+            </div>
+
+            <div class="footerBox">
+                <div class="item2">7</div>
+                <div class="item2">8</div>
+                <div class="item2">9</div>
+                <div class="item2">4</div>
+                <div class="item2">5</div>
+                <div class="item2">6</div>
+                <div class="item2">1</div>
+                <div class="item2">2</div>
+                <div class="item2">3</div>
+                <div class="item2">.</div>
+                <div class="item2">0</div>
+                <div class="item2">C</div>
+
+                <div class="item3">=</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let res = document.getElementsByClassName("result")[0];
+    let oldRes = document.getElementsByClassName("oldRes")[0];
+    let headerBox = document.getElementsByClassName("headerBox")[0];
+    let footerBox = document.getElementsByClassName("footerBox")[0];
+    let curMethod = 0;
+
+    headerBox.addEventListener("click", function (ev) {
+        ev = ev || window.event
+        let target = ev.target || ev.srcElement;
+
+        if (ev.target && ev.target.className == "item") {
+            let resText = res.innerText == "0" ? "" : res.innerText;
+            let resNum = 0;
+            if (resText != "") {
+                resNum = Number(resText)
+            }
+
+            // 存储旧值，将结果显示清零
+            // let oldResNum = oldRes.innerText == "" ? 0 : Number(oldRes.innerText);
+            oldRes.innerText = resText;
+            res.innerText = 0;
+
+            let curRes = 0;
+            let curVal = target.innerText;
+            switch (curVal) {
+                case "+":
+                    // curRes = oldResNum + resNum;
+                    curMethod = 1
+                    break;
+                case "-":
+                    // curRes = oldResNum - resNum;
+                    curMethod = 2
+                    break;
+                case "/":
+                    curMethod = 3
+                    break;
+                default:
+                    curMethod = 4
+            }
+            // res.innerText = curRes;
+        }
+    })
+
+    footerBox.addEventListener("click", function (ev) {
+        ev = ev || window.event
+        let target = ev.target || ev.srcElement;
+        let resText = res.innerText == "0" ? "" : res.innerText;
+
+        if (ev.target && ev.target.className == "item2") {
+            let curVal = target.innerText;
+            if (curVal == "C") {
+                oldRes.innerText = "";
+                res.innerText = 0;
+            } else {
+                resText = resText.concat(curVal);
+                res.innerText = resText;
+            }
+        } else if (ev.target && ev.target.className == "item3") {
+            let oldResNum = oldRes.innerText == "" ? 0 : Number(oldRes.innerText);
+            let curVal = 0;
+            let resNum = 0;
+            if (resText != "") {
+                resNum = Number(resText)
+            }
+            // 判断加减乘除
+            switch (curMethod) {
+                case 1:
+                    curVal = oldResNum + resNum;
+                    break;
+                case 2:
+                    curVal = oldResNum - resNum;
+                    curMethod = 2
+                    break;
+                case 3:
+                    curVal = oldResNum / resNum;
+                    break;
+                default:
+                    curVal = oldResNum * resNum;
+            }
+            oldRes.innerText = "";
+            res.innerText = curVal;
+        }
+    })
+</script>
+
+</html>

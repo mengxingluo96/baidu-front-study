@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="main">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+</body>
+</html>
+<style>
+    *{    /* 去除所有元素默认的内外边距的值 */
+      padding: 0;
+      margin: 0;
+    }
+
+    html, body{   /* 默认HTML，body的高度为0，为其设置高度以使后面的div可以用百分比设置高度 */
+      height: 100%;
+    }
+    
+    .header{
+      width: 50%;
+      height: 50%;
+      margin: 0 auto;
+      background-color: orange;
+    }
+
+    .main{
+      width: 100%;
+      height: 50%;
+    }
+
+    .main .left{
+      float: left;
+      width: 50%;
+      height: 100%;
+      background-color: #bfa;
+    }
+
+    .main .right{
+      float: left;
+      width: 50%;
+      height: 100%;
+      background-color: pink;
+    }
+</style>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>输入json格式的字符串:<span>
+            <br /><br />
+            <input id="jsonStr" />
+            <br /><br />
+            <button onclick="toObject()">json反序列化</button>
+
+        </span></span>
+</body>
+
+<script>
+    var scoreObject = {
+        Tony: {
+            Math: 95,
+            English: 79,
+            Music: 68,
+        },
+        Simon: {
+            Math: 100,
+            English: 95,
+            Music: 98,
+        },
+        Annie: {
+            Math: 54,
+            English: 65,
+            Music: 88,
+        },
+    };
+
+    //编写函数，实现将 JavaScript 对象转化为 JSON 字符串
+    function toJSON() {
+        //your complement
+        let curJson = JSON.stringify(scoreObject);
+        console.log(curJson)
+
+        return curJson
+    }
+    toJSON();   
+
+    //编写函数，实现将json字符串，转化为jS对象 
+    function toObject() { 
+        let jsonStr = document.getElementById("jsonStr").value;
+        let jsonObj = JSON.parse(jsonStr);
+        // console.log(jsonObj)
+    }
+</script>
+
+</html>

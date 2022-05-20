@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>请输入您的身高:</label><input type="text" id="height">
+    <br>
+    <label>请输入您的体重:</label><input type="text" id="weight">
+    <br>
+    <button id="btn" onclick="cal()">开始测量您的体型</button>
+    <p id="result"></p>
+    <script>
+        //在这里实现编写您的代码
+        function cal() {
+            let height = document.getElementById('height').value;
+            let weight = document.getElementById('weight').value;
+            let res = weight / (height * height);
+            let result = document.getElementById('result');
+
+            if(res < 18.5){
+                result.innerText = "您是偏瘦体型，可以适当增肥咯";
+            }else if(res < 25){
+                result.innerText = "您是标准体型，保持的不错哟";
+            }else if(res < 28){
+                result.innerText = "您是微胖体型，可以多吃粗粮，让饮食结构更加健康吧！";
+            }else{
+                result.innerText = "您是肥胖体型，管住嘴迈开腿开始减肥吧！";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

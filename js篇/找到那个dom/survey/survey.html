@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form Demo</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700'>
+  <style>
+    .box1 {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="title">调查表格</h1>
+  </header>
+
+  <main>
+
+    <p id="description">
+      感谢您的参与帮助我们完成此次调查
+    </p>
+
+    <section class="form-container">
+      <form action="" id="survey-form">
+
+        <fieldset name="person-info">
+          <label for="name" id="name-label">姓名:</label>
+          <input type="text" id="name" class="name-email" placeholder="姓名" required>
+
+          <br><br>
+
+          <label for="email" id="email-label">邮箱:</label>
+          <input type="email" id="email" class="name-email" placeholder="邮箱" required>
+
+          <br><br>
+
+          <label for="number" id="number-label">年龄:</label>
+          <input type="number" id="number" placeholder="年龄" min='0' max="140" required>
+
+          <br><br>
+
+          <label for="dropdown" id="dropdown-label">性别:</label>
+          <select name="State" id="dropdown" name="gender" required>
+            <option value="FL">女</option>
+            <option value="NY">男</option>
+          </select>
+        </fieldset>
+        <br><br>
+
+        <fieldset name="satisfy">
+          <p>您对所选餐食的满意程度如何？</p>
+          <input type="radio" name='pick-radio' value="Really" required /> 非常满意 <br>
+          <input type="radio" name='pick-radio' value="okay" /> 一般 <br>
+          <input type="radio" name='pick-radio' value="not" /> 不满意 <br>
+          <br>
+          <hr>
+
+          <table id="rate-table">
+            <tr>
+              <td>问题</td>
+              <th class="y">1</th>
+              <th class="digits">2</th>
+              <th class="digits">3</th>
+              <th class="digits">4</th>
+              <th class="digits">5</th>
+            </tr>
+            <tr>
+              <td>
+                <p>您对于此次的服务的满意程度?</p>
+              </td>
+              <td><input type="radio" name="rate" value="1" required /></td>
+              <td><input type="radio" name="rate" value="2" /></td>
+              <td><input type="radio" name="rate" value="3" /></td>
+              <td><input type="radio" name="rate" value="4" /></td>
+              <td><input type="radio" name="rate" value="5" /></td>
+            </tr>
+            <tr>
+              <td>
+                <p>您如何评价此次就餐的各种菜肴？</p>
+              </td>
+              <td><input type="radio" name="dishes" value="1" required /></td>
+              <td><input type="radio" name="dishes" value="2" /></td>
+              <td><input type="radio" name="dishes" value="3" /></td>
+              <td><input type="radio" name="dishes" value="4" /></td>
+              <td><input type="radio" name="dishes" value="5" /></td>
+            </tr>
+          </table>
+
+        </fieldset>
+
+        <br><br>
+
+        <fieldset name='select-check'>
+          <p>
+            您最喜欢自助餐中的什么？ 选择适用的菜肴。
+          </p>
+          <input type="checkbox" value="curry" class="check" />咖喱饭<br>
+          <input type="checkbox" value="pekingDuck" class="check" />北京烤鸭 <br>
+          <input type="checkbox" value="pasta" class="check" />意面 <br>
+          <input type="checkbox" value="dessert" class="check" />甜品 <br>
+        </fieldset>
+        <br>
+        <div data-widget-name="suggestion">
+          <p>如果您有任何其他建议，请在下方留下您的意见 .</p>
+          <textarea name="" id="comments" placeholder="请留下您宝贵的意见..." required></textarea>
+        </div>
+        <br>
+        <button id="submit" value="Submit">提交</button>
+
+      </form>
+    </section>
+
+  </main>
+</body>
+
+<script>
+  /**
+   * 带有 id="rate-table" 的表格。
+    带有 name = "select-check: 的 fieldset。
+    表格中的第一个 td (带有 "rate" 字段)
+    表单中的第一个 input。
+    表单中的最后一个 input。
+    获取带有 data-widget-name 特性（attribute）的元素
+    表单中 第二个 name = "dishes" 的单选框
+    表单中 name 含有 pick 字段的元素
+    带有 class = "check" 的元素集合
+   * */
+
+  let curTable = document.getElementById("rate-table");
+  // 1 console.log(curTable);
+
+  let selectCheck = document.getElementsByName("select-check")[0];
+  // 2 console.log(selectCheck);
+
+  let firstTd = document.querySelector("td");
+  // 3 console.log(firstTd);
+
+  let firstInput = document.querySelector("input");
+  // 4 console.log(firstInput);
+
+  let inputs = document.querySelectorAll("input");
+  let lastInput = inputs[inputs.length - 1];
+  // 5 console.log(lastInput);
+
+  let dataWidgetNameEle = document.querySelector("[data-widget-name]");
+  // 6 console.log(dataWidgetNameEle)
+
+  let secondDishes = document.getElementsByName("dishes")[1];
+  // 7 console.log(secondDishes)
+
+  // let pickEle = document.get
+  // 8 console.log(pickEle)
+
+  let checkEles = document.getElementsByClassName("check");
+  // 9 console.log(checkEles);
+
+  // 给所有的必填输入框添加一个绿色边框，请您将获取的输入框节点列表表转化为数组
+  let inputs2 = document.querySelectorAll("input");
+  inputs2.forEach(element => {
+    if (element.hasAttribute("required")) {
+      element.style.border = "1px solid green";
+    }
+  });
+
+  // 对页面元素的遍历,编写代码给每一个遍历到的元素添加一个红色背景颜色
+  let nodes = document.querySelectorAll("*");
+  // console.log(nodes)
+  nodes.forEach(element => {
+    element.style.background = "red";
+  })
+
+</script>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:768px) {
+            .wrap1 {
+                display: none;
+                width: 100%;
+                height: 500px;
+                background-color: #eee;
+            }
+
+            .wrap2 {
+
+                width: 100%;
+                height: 500px;
+                background-color: #eee;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .wrap1 {
+
+                width: 100%;
+                height: 500px;
+                background-color: #eee;
+            }
+
+            .wrap2 {
+                display: none;
+                width: 100%;
+                height: 500px;
+                background-color: #eee;
+            }
+        }
+
+        .box1 {
+            margin-top: 20px;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box2{
+            margin-top: 20px;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .col-1 {
+            flex: 0 0 8.33%;
+        }
+
+        .col-2 {
+            flex: 0 0 16.66%;
+        }
+
+        .col-3 {
+            flex: 0 0 25%;
+        }
+
+        .col-4 {
+            flex: 0 0 33.33%;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+        }
+
+        .col-8 {
+            flex: 0 0 66.66%;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+        }
+
+        .realBox {
+            height: 100%;
+            width: auto;
+            margin-right: 20px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap1">
+        <div class="box1">
+            <div class="col-4">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-4">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-4">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-6">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="col-1">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-1">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-2">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-2">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-6">
+                <div class="realBox"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap2">
+        <div class="box1">
+            <div class="col-6">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-6">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="col-12">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-6">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="col-2">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-2">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-8">
+                <div class="realBox"></div>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+            <div class="col-3">
+                <div class="realBox"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

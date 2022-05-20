@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #doma{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="doma">
+
+    </div>
+</body>
+<script>
+    // 给一个element绑定一个针对event事件的响应，响应函数为listener
+    function addEvent(element, event, listener) {
+        // your implement
+        let curEle = document.querySelector(element);
+        curEle.addEventListener(event,listener);
+    }
+
+    // 移除element对象对于event事件发生时执行listener的响应
+    function removeEvent(element, event, listener) {
+        // your implement
+        let curEle = document.querySelector(element);
+        curEle.removeEventListener(event,listener);
+    }
+
+    // 给一个element绑定一个针对event事件的响应，响应函数为listener,但是listener只执行一次
+    function addEventOnce(element, event, listener) {
+        let curEle = document.querySelector(element);
+        // console.log(curEle)
+        curEle.addEventListener(event,listener);
+        curEle.removeEventListener(event,listener);
+    }
+
+    // 例如：
+    function clicklistener(event) {
+        console.log(111)
+    }
+
+    // 测试用例
+    // addEvent("#doma", "click", clicklistener);//给id 为 doma 元素的点击事件添加了clicklistener事件处理程序
+    // removeEvent("#doma", "click", clicklistener);//给 id 为 doma 元素的点击事件删除了clicklistener事件处理程序
+    addEventOnce("#doma", "click", clicklistener);
+    //给 id 为 doma 元素的点击事件添加了onceClicklistener事件处理程序，doma 元素点击后onceClicklistener事件处理程序从 doma 元素上删除
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>demo</title>
+    <style>
+        #progress {
+            width: 0%;
+            background-color: #a2cfe4;
+            height: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        function progressStart() {
+            let progress = document.getElementById("progress");
+            let num = 0;
+            //模拟进度条
+            let timer = setInterval(function () {
+                if(num == 99){
+                    clearInterval(timer);
+                }
+
+                num++;
+                progress.innerText = num + "%";
+                progress.style.setProperty("width", num + "%")
+            }, 50)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="progress">0%</div>
+    <button id="btn" onclick="progressStart()">run</button>
+</body>
+
+</html>

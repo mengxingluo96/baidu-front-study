@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /*
+    实现一个判断传入的参数是否为 undefined 类型
+    返回一个布尔值，如果是undefied 为true，否之，为fase
+    */
+    function isUndefined(arg) {
+        return arg === undefined;
+        //do something
+    }
+
+    /*
+    实现一个判断传入的参数是否为 null 类型
+    返回一个布尔值，如果是null 为true，否之，为fase
+    */
+    function isNull(arg) {
+        return arg === null;
+        //do something
+    }
+
+    // 测试用例
+    var expUndefined = undefined;
+    var expNull = null;
+    var expZero = 0;
+    var a;
+    var o = new Object();
+    console.log(isUndefined(expUndefined)); // ->true
+    console.log(isUndefined(expNull)); // ->false
+    console.log(isUndefined(a)); // ->true
+    console.log(isUndefined(o)); // ->true
+    console.log(isNull(expUndefined)); // ->false
+    console.log(isNull(expNull)); // ->true
+    console.log(isNull(expZero)); // ->false
+    console.log(isNull(a)); // ->false
+    console.log(isNull(o)); // ->false
+</script>

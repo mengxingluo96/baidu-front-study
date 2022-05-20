@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    * 解构要求
+    * name 属性赋值给变量 name。
+    * years 属性赋值给变量 age。
+    * math 属性复制给变量 mathScore。
+    * chemistry 属性复制给变量 chemistryScore。
+    * biology 属性复制给变量 biologyScore。
+    * sport 属性复制给变量 hobby1。
+    * dance 属性复制给变量 hobby2。
+    * marriageStaus 属性赋值给变量 marriageStaus（如果属性缺失则取默认值 false）
+    */
+
+    let person = {
+        name: "Amy",
+        years: 30,
+        score: {
+            math: 99,
+            chemistry: 80,
+            biology: 78,
+        },
+        hobbies: ["sport", "dance"],
+    };
+
+    // your complement
+    let { name, years: age,
+        score: { math: mathScore, chemistry: chemistryScore, biology: biologyScore },
+        hobbies: [hobby1, hobby2] } = person;
+
+    console.log(name); // Amy
+    console.log(age); // 30
+    console.log(mathScore); // 99
+    console.log(chemistryScore); // 80
+    console.log(biologyScore); // 78
+    console.log(hobby1); // sport
+    console.log(hobby2); // dance
+</script>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .moveDiv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="moveDiv"></div>
+    </div>
+</body>
+
+<script>
+    let moveDiv = document.getElementsByClassName("moveDiv")[0];
+    let topLen = 0;
+    let leftLen = 0;
+
+    // 全局键盘事件
+    window.onload = function () {
+        document.onkeydown = function (event) {
+            // keycode 37 = Left
+            // keycode 38 = Up
+            // keycode 39 = Right
+            // keycode 40 = Down
+            let curMove = event.ctrlKey ? 12 : 4;
+            if (event.keyCode == 37 && leftLen > 0) {
+                leftLen -= curMove;
+            } else if (event.keyCode == 38 && topLen > 0) {
+                topLen -= curMove;
+            } else if (event.keyCode == 39 && leftLen < 400) {
+                leftLen += curMove;
+            } else if (event.keyCode == 40 && topLen < 400) {
+                topLen += curMove;
+            } else {
+                return;
+            }
+
+            moveDiv.style.setProperty('left', leftLen + 'px');
+            moveDiv.style.setProperty('top', topLen + 'px');
+        };
+    }
+</script>
+
+</html>

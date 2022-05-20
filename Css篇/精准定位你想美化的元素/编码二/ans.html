@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        使用伪元素选择器，给表格设置单行背景色为#eee，双号数行为背景色为白色
+        选中所有标题栏，设置背景颜色为黑色，字体为白色
+        应用伪元素选择器，选中第一列单元格，设置背景颜色为黑色，字体为白色，粗体。
+        应用伪元素选择器，选中倍数为 3 的单元格，设置透明度为 0.9
+        */
+        tr:nth-child(2n + 1) {
+            background-color: #eee;
+        }
+
+        tr:nth-child(2n) {
+            background-color: white;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        tbody tr td:first-of-type {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        td:nth-of-type(3n) {
+            color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <caption>
+            TABLE SAMPLE
+        </caption>
+        <thead>
+            <tr>
+                <th>title one</th>
+                <th>title two</th>
+                <th>title three</th>
+                <th>title four</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>content1</th>
+                <td>content2</td>
+                <td>content3</td>
+                <td>content4</td>
+            </tr>
+            <tr>
+                <th>content5</th>
+                <td>content6</td>
+                <td>content7</td>
+                <td>content8</td>
+            </tr>
+            <tr>
+                <th>content9</th>
+                <td>content10</td>
+                <td>content11</td>
+                <td>content12</td>
+            </tr>
+            <tr>
+                <th>content13</th>
+                <td>content14</td>
+                <td>content15</td>
+                <td>content16</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

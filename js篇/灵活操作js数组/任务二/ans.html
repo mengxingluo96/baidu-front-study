@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 实现两个数组拼接,返回一个新数组
+    function arrJoin(arr1, arr2) {
+        // your implement
+        let res = [];
+        arr1.forEach(element => {
+            res.push(element);
+        });
+        arr2.forEach(element => {
+            res.push(element);
+        });
+
+        return res;
+    }
+    //测试用例
+    let arr1 = ['1', '2', '3'];
+    let arr2 = ['3', '6', '1']
+    console.log(arrJoin(arr1, arr2)); // -> ['1', '2', '3', '3', '6', '1']
+
+    // 利用reduce()实现两个数组归并
+    function arrMerge(arr1, arr2) {
+        // your implement
+        let newArr = [];
+        arr1.forEach(element => {
+            if (!newArr.includes(element)) {
+                newArr.push(element);
+            }
+        })
+        arr2.forEach(element => {
+            if (!newArr.includes(element)) {
+                newArr.push(element);
+            }
+        })
+
+        return newArr
+    }
+
+    //测试用例
+    // let arr1 = ['1', '2', '3'];
+    // let arr2 = ['3', '6', '1']
+    console.log(arrMerge(arr1, arr2)); // -> ['1', '2', '3', '6']
+
+    // 封装数组去重函数,去除数组中重复的元素,
+    function norepeat(arr) {
+        // your implement
+        let newArr = [];
+        arr.forEach(element => {
+            if (!newArr.includes(element)) {
+                newArr.push(element);
+            }
+        })
+
+        return newArr
+    }
+
+    //测试用例
+    let arr = ['a', 'ab', 'a'];
+    console.log(norepeat(arr)); // -> ['a', 'ab']
+
+    // 实现方法检测数组是否包含特定值
+    function inArray(arr, value) {
+        //your implement
+        let res = arr.find(element => element == value);
+        if (res) {
+            return true;
+        }
+        return false;
+    }
+
+    //测试用例
+    // let arr = ['a', 'ab', 'a'];
+    console.log(inArray(arr, 'b')); // -> false
+    console.log(inArray(arr, 'a')); // -> true
+
+    // let arr = ['a', 'ab', 'a'];
+    console.log(inArray(arr, 'b')); //-> false
+    console.log(inArray(arr, 'a')); // -> true
+
+    // 实现多维数组变为一维数组
+    let arrMax = [];//存放转换数组元素
+    function matrixElements(arr) {
+        for (let index = 0; index < arr.length; index++) {
+            if (Array.isArray(arr[index])) {
+                matrixElements(arr[index])
+            }else{
+                arrMax.push(arr[index]);
+            }
+        }
+
+        return arrMax;
+    }
+
+    //测试用例
+    let rows = [[2, 3, 5], [1, 2, 4], [8, 5, 5]]
+    console.log(matrixElements(rows)) //[2,3,5,1,2,4,8,5,5]
+</script>
+
+</html>

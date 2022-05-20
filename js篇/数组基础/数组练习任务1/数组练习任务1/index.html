@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1 class="nav-brand">学生成绩表格</h1>
+    </nav>
+    
+    <main class="container">
+        <table class="table" id="score-table">
+            <thead>
+                <tr>
+                    <th>学生姓名</th>
+                    <th>分数</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button class="print_first">打印第一名</button>
+        <button class="print_last">打印最后一名</button>
+        <button class="print_average">打印平均分</button>
+        <ul class="report"></ul>
+    </main>
+  
+    <script src="score.js" ></script>
+    <script src="index.js" ></script>
+</body>
+</html>

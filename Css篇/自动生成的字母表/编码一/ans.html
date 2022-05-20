@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 70%;
+            margin: 50px auto;
+            display: grid;
+            grid-auto-columns: 70px;
+            grid-auto-rows: 60px;
+            grid-gap: 15px 30px;
+
+            /* 创建计数器 在父元素内创建  如果count后面没1 则第二个字母是从A开始*/
+            counter-reset: count 1;
+        }
+
+        .item {
+            background-color: #19cab6;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        .item::before {
+            position: relative;
+            top: 15px;
+            left: 15px;
+            color: #7265cb;
+            counter-increment: section;
+        }
+
+        .item::after {
+            position: relative;
+            top: 15px;
+            left: 25px;
+            color: #bd7974;
+            counter-increment: section;
+        }
+
+        .item:nth-child(1)::before {
+            content: 'A';
+        }
+
+        .item:nth-child(1)::after {
+            content: 'a';
+        }
+
+        .item:nth-child(n+2)::before {
+            /* 数字累加 */
+            counter-increment: count;
+            /* content: counter(count, upper-alpha); */
+            content: counter(count, upper-alpha);
+        }
+
+        .item:nth-child(n+2)::after {
+            /* before调用的时候 使用了 如果此处count不为0 则小写字母不符合预期 可以自己多换几个数字 试试 */
+            counter-increment: count 0;
+            /* content: counter(count, lower-alpha); */
+            content: counter(count, lower-alpha);
+        }
+
+        .item:nth-child(6n+1) {
+            grid-column-start: 1;
+        }
+
+        .item:nth-child(6n+2) {
+            grid-column-start: 2;
+        }
+
+        .item:nth-child(6n+3) {
+            grid-column-start: 3;
+        }
+
+        .item:nth-child(6n+4) {
+            grid-column-start: 4;
+        }
+
+        .item:nth-child(6n+5) {
+            grid-column-start: 5;
+        }
+
+        .item:nth-child(6n+6) {
+            grid-column-start: 6;
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <div class="wrap">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+
+    </figure>
+</body>
+
+</html>

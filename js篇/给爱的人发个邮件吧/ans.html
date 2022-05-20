@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            list-style: none;
+            width: 0;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .email-sug {
+            border: 1px solid gray;
+            width: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #email-input {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text" oninput="showRemind()">
+        <ul id="email-sug-wrapper" class="email-sug">
+        </ul>
+    </div>
+</body>
+
+<script>
+    // 邮箱后缀List参考
+    var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+
+    /*
+    */
+    // let inputSt = "";
+    let remind = document.getElementById("email-sug-wrapper");
+    let emailInput = document.getElementById("email-input");
+    // 获取用户输入，生成提示框中的提示内容，将提示内容添加到email-sug-wrapper中    控制email-sug-wrapper的显示/隐藏状态
+    function showRemind() {
+        remind.innerHTML = null;
+        let inputStr = getInput();
+        displayToggle(inputStr);
+        insertRemind(inputStr);
+    }
+
+    // 拿到input输入框的输入内容trim后返回
+    function getInput() {
+        inputStr = emailInput.value.trim();
+
+        return inputStr;
+    }
+
+    //控制email-sug-wrapper的显示/隐藏状态
+    function displayToggle(inputStr) {
+        if (!inputStr) {
+            // 隐藏提示框
+            hideRemind();
+        } else {
+            // 显示提示框
+            show();
+        }
+    }
+
+    // 将提示内容添加到email-sug-wrapper中
+    function insertRemind(inputStr) {
+        // 获取生成提示框中的提示内容 将内容添加到email-sug-wrapper中
+        for (let index = 0; index < postfixList.length; index++) {
+            let element = postfixList[index];
+            // 判断是否输入了@
+            let curIndex = inputStr.indexOf("@");
+            let curStrLen = "";
+            if (curIndex != -1) {
+                curStrLen = inputStr.slice(curIndex + 1);
+                inputStr = inputStr.slice(0, curIndex);
+            }
+
+            if (!curStrLen || element.indexOf(curStrLen)) {
+                let curStr = inputStr.concat("@" + element);
+                let curLi = document.createElement("li");
+                curLi.classList.add("item")
+                // curLi.addEventListener("mouseover",liMove());
+                curLi.innerText = curStr;
+                remind.appendChild(curLi);
+            }
+        }
+    }
+
+    // 做具体隐藏提示框的操作
+    function hideRemind() {
+        remind.style.setProperty("display", "none");
+    }
+
+    //  做具体显示提示框的操作
+    function show() {
+        remind.style.setProperty("display", "block");
+    }
+
+    // 事件委派
+    remind.addEventListener("click", function choose(ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        if (ev.target && ev.target.nodeName.toUpperCase() == "LI") {
+            let curText = target.innerText;
+            // console.log(curText)
+            emailInput.value = curText;
+            remind.innerHTML = null;
+        }
+    })
+
+    function liMove(ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        console.log(222)
+    }
+
+</script>
+
+</html>

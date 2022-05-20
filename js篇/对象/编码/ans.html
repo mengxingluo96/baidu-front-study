@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const bankAcount = {
+        name: "jack",
+        balance: 1000,
+        rank: 1,
+        interestRatePercent: "1%",
+        deposit: function (amount) {
+            balance += amount;
+        },
+        withdraw: function (amount) {
+            balance -= amount;
+        }
+    }
+
+    function printAccountInfo(obj) {
+        let res = `您的存款总值：￥${bankAcount.balance} ,您的财富排名为：${bankAcount.rank}，您的银行利率为：${bankAcount.interestRatePercent}`;
+        console.log(res);
+    }
+
+    /**
+        封装一个函数，检验 bankAcount 是否有 vip 这个属性，如果有就返回 true ，如果没有就返回 false
+        封装一个函数，遍历 bankAcount 的属性，并且控制台中打印出来
+        封装一个 isEmpty(obj) 判空函数，当对象没有属性的时候返回 true，否则返回 false
+     * */
+    function isHaveVio(obj){
+        return obj.vip ? true : false;
+    }
+
+</script>
+
+</html>

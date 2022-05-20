@@ -1,0 +1,28 @@
+
+body{
+    background-color: #d7d7d7;
+}
+.container{
+    display: flex;
+}
+.container div{
+    width:200px;
+    height:200px;
+    margin: 5px;
+    background-color: black;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    line-height: 200px;
+}
+.btnPnl button{
+   padding: 0.5rem 0.8rem ;
+   margin: 5px;
+   cursor: pointer;
+   border-color: black;
+   border-radius: 5px;
+}
+.btnPnl button:hover{
+   background-color: black;
+   color:white
+}

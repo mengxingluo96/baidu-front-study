@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>window对象练习</title>
+    <style>
+        .info{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 2px solid black;
+            border-radius: 10px;
+
+            display: none;
+        }
+    </style>
+    <script>
+        /*
+        完成新打开一个窗口功能，请尝试在标签页打开，以及新开一个浏览器窗口打开两种方式，设置窗口外观宽度为 300 像素，高度为 300 像素
+        调整这个新开窗口宽度高度变为 600 像素
+        移动这个新开的窗口的位置到屏幕左上角位置为(300px,100px)
+        完成关闭新窗口功能，并且弹出确认框，完成一个逻辑判断，如果用户点击确认就关闭窗口，如果点击取消就不关闭
+        实现打印窗口效果
+        实现点击关于这个浏览器窗口按钮,新开一个窗口，设置窗口外观宽度为 300 像素，高度为 300 像素，并且在新窗口中显示这个浏览器相关信息如下
+            浏览器窗口宽度(不包含工具栏与滚动条)
+            浏览器窗口高度(包含工具栏与滚动条)
+            浏览器名称为
+            浏览器的完整高度，包含工具栏与滚动条
+            浏览器的完整宽度，包含工具栏与滚动条
+            浏览器窗口相对于计算机屏幕的 X 坐标
+            浏览器窗口相对于计算机屏幕的 Y 坐标
+            当前页面相对于浏览器窗口左上角沿水平方向滚动的距离
+            当前页面相对于浏览器窗口左上角沿垂直方向滚动的距离
+            点击滚动按钮,滚动当前页面到(0px ,100px)
+
+            window.open() - 打开新窗口
+            window.close() - 关闭当前窗口
+            window.moveTo() -移动当前窗口
+            window.resizeTo() -重新调整当前窗口
+
+            1.点击某一个链接之后跳转到新页面显示
+            window.open(‘http://www.baidu.com’,’_blank’);
+
+            2.需要刷新当前页面或者覆盖当前页面
+            window.open(‘http://www.baidu.com’,’_self’);
+        */
+
+        var myWindow;
+        function openWin() {
+            myWindow = window.open('', '', 'width=300,height=300');
+            myWindow.document.write("<p>这是我的窗口</p>");
+        }
+
+        function moveWin() {
+            //移动这个新窗口
+            myWindow.moveTo(0, 0);
+        }
+        function focusWin() {
+            //聚焦这个新窗口
+            myWindow.focus();
+        }
+        function resize() {
+            //调整这个新窗口大小
+            myWindow.resizeTo(600, 600)
+        }
+        function closeWin() {
+            //关闭这个新窗口
+            //弹出系统对话框要求用户是否确认关闭新开的窗口
+            myWindow.close()
+        }
+        function printWin() {
+            //打印窗口
+            window.print()
+        }
+        function showWInMessage() {
+            //新开一个窗口，显示父窗口信息
+            myWindow = window.open('', '', 'width=300,height=300');
+            myWindow.document.write("<p>这是我的窗口</p>");
+            console.log(myWindow.parent.location)
+        }
+        function scrollWin() {
+            //移动关于这个浏览器窗口到（0px,100px）
+            //移动这个新窗口
+            myWindow.moveTo(0, 100);
+        }
+
+        function showInfo(){
+            let infoDiv = document.getElementsByClassName("info")[0];
+            let screenHeigh = screen.height;
+            let screenWidth = screen.width;
+            let colorDepth = screen.colorDepth;
+            let availHeight = screen.availHeight;
+            let availWidth = screen.availWidth;
+
+            let area = `你计算机屏幕的尺寸：${screenHeigh} x ${screenWidth}`;
+            let colorText = `你计算机屏幕的颜色深度：${colorDepth}`;
+            let heightText = `你计算机屏幕的颜色高度：${availHeight}`;
+            let widthText = `你计算机屏幕的颜色宽度：${availWidth}`;
+
+            let p1 = document.createElement("p");
+            let p2 = document.createElement("p");
+            let p3 = document.createElement("p");
+            let p4 = document.createElement("p");
+            p1.innerText = area;
+            p2.innerText = colorText;
+            p3.innerText = heightText;
+            p4.innerText = widthText;
+
+            infoDiv.appendChild(p1);
+            infoDiv.appendChild(p2);
+            infoDiv.appendChild(p3);
+            infoDiv.appendChild(p4);
+
+            infoDiv.style.setProperty("display","block");
+        }
+
+        function showLoaction(){
+            let infoDiv = document.getElementsByClassName("info")[0];
+            let allHrefInfo = window.location.href;
+            let path = window.location.pathname;
+            let protocol = window.location.protocol ;
+            let port = window.location.port;
+            let hostname = window.location.hostname;
+
+            console.log(allHrefInfo)
+            console.log(path)
+            console.log(protocol)
+            console.log(hostname + " : " + port)
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="打开一个新窗口" onclick="openWin()" />
+    <br>
+    <input type="button" value="移动这个新窗口" onclick="moveWin()" />
+    <br>
+    <input type="button" value="聚焦到新窗口" onclick="focusWin()" />
+    <br>
+    <input type="button" value="调整这个新窗口大小" onclick="resize()" />
+    <br>
+    <input type="button" value="关闭这个新窗口" onclick="closeWin()" />
+    <br>
+    <input type="button" value="打印本窗口" onclick="printWin()" />
+    <br>
+    <input type="button" value="关于这个浏览器窗口" onclick="showWInMessage()" />
+    <br>
+    <input type="button" value="滚动" onclick="scrollWin()" />
+    <br>
+    <input type="button" value="关于我的电脑" onclick="showInfo()" />
+    <br>
+    <input type="button" value="当前页面链接相关信息" onclick="showLoaction()" />
+
+    <div class="info">
+
+    </div>
+
+    <!-- <div class="info">
+
+    </div> -->
+
+</body>
+
+<script>
+
+</script>
+
+</html>

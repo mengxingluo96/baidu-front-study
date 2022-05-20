@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+        .box{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .card{
+            display: inline-block;
+            width: 400px;
+            /* 
+            方式三：
+            overflow: hidden; */
+        }
+
+        img{
+            /*
+            方式一：图片不改变自己的原始比例，放置到盒子中去，可以不用铺满盒子
+            max-width: 100%; 
+            让图片伸缩的同时，既不会超过它的固有尺寸，也不会破坏原有的宽高比
+            */
+
+            /* 
+            方式二：图片改变自己的原始比例，铺满整个盒子
+            height: 100%;
+            width: 100%;
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <!--图片框设置400像素宽 300像素高-->
+        <div class="box">
+            <img src="https://b.bdstatic.com/searchbox/icms/searchbox/img/mountain.jpg" />
+        </div>
+        <!--文本不换行,溢出省略号表示-->
+        <p class="container">
+            这是一些文本 这是一些文本 这是一些文本这是一些文本 这是一些文本
+            这是一些文本这是一些文本 这是一些文本 这是一些文本
+        </p>
+    </div>
+</body>
+
+</html>

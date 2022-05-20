@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // 封装一个函数实现 Map 转为 数组
+    function strMapToArray(map) {
+        let arr = [...map];
+        // console.log(arr)
+        return arr;
+    }
+
+    // 封装一个函数实现 数组 转为 Map
+    function arrayTostrMap(arr) {
+        let map = new Map(arr);
+        // console.log(arr)
+        return map;
+    }
+
+    // 封装一个函数实现 Map 转为 对象
+    function strMapToObj(strMap) {
+        let obj = Object.create(null);
+        for (let [k, v] of strMap) {
+            obj[k] = v;
+        }
+        return obj;
+    }
+
+    // 封装一个函数实现 对象转为 Map
+    function objToStrMap(obj) {
+        let strMap = new Map();
+        for (let k of Object.keys(obj)) {
+            strMap.set(k, obj[k]);
+        }
+        return strMap;
+    }
+
+    // 封装一个函数实现 Map 转为 JSON
+    function strMapToJson(strMap) {
+        return JSON.stringify(strMapToObj(strMap));
+    }
+
+    // 封装一个函数实现 JSON 转为 Map
+    function jsonToStrMap(jsonStr) {
+        return objToStrMap(JSON.parse(jsonStr));
+    }
+
+    //测试用例一
+    let arr = [
+        [true, 7],
+        [{ foo: 3 }, ["abc"]],
+    ];
+    console.log(arrayTostrMap(arr)); // -> Map {true => 7,Object {foo: 3} => ['abc']}
+
+    //测试用例二
+    const myMap1 = new Map().set("yes", true).set("no", false);
+    console.log(strMapToObj(myMap1)); // -> { yes: true, no: false }
+
+    //测试用例三
+    console.log(objToStrMap({ yes: true, no: false })); // -> Map {"yes" => true, "no" => false}
+
+    //测试用例四
+    let myMap2 = new Map().set("yes", true).set("no", false);
+    console.log(strMapToJson(myMap2)); // -> '{"yes":true,"no":false}'
+
+    //测试用例五
+    console.log(jsonToStrMap('{"yes": true, "no": false}')); //-> Map {'yes' => true, 'no' => false}
+
+    //测试用例六
+    const myMap = new Map().set(true, 7).set({ foo: 3 }, ["abc"]);
+    console.log(strMapToArray(myMap)); //-> [ [ true, 7 ], [ { foo: 3 }, [ 'abc' ] ] ]
+
+    // 自测
+    const map = new Map();
+    map.set(1, "aaa").set(1, "bbb");
+    console.log(map.get(1));
+</script>
+
+</html>

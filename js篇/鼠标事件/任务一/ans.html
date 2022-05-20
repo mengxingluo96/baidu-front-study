@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: absolute;
+            width: 700px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .item {
+            width: 45px;
+            height: 45px;
+            background-color: black;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!--小方块阵列-->
+    <div class="container" id="container">
+    </div>
+</body>
+
+<script>
+    let colors = ["red", "orange", "yellow", "green", "pink", "blue", "purple"];
+    let container = document.getElementById("container");
+
+    //生成一个小方块阵列，并且给每个小方块绑定鼠标移入和移出事件
+    function generateSuare() {
+        // 700 * 500 / 50 = 140 总共可以生成140个
+        for (let index = 0; index < 140; index++) {
+            let curDiv = document.createElement("div");
+            curDiv.classList.add("item");
+            container.appendChild(curDiv);
+        }
+    }
+
+    //这个函数实现设置小方块颜色，并且绑定到鼠标移入事件
+    function setColor(element) {
+        // 获取随机数
+        // 表示结果为 0-6 之间的一个随机数
+        let curRandom = Math.floor(Math.random() * 7);
+        let curColor = colors[curRandom];
+        element.style.setProperty('background-color', curColor);
+    }
+
+    //这个函数实现去除小方块颜色，并且绑定到鼠标移出事件
+    function deleteColor(element) {
+        element.style.setProperty('background-color', 'black');
+    }
+
+    generateSuare()
+
+    // 鼠标移入事件
+    container.onmouseover = function monuseOver(ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        // console.log(target)
+        // 寻找li元素
+        if (ev.target && ev.target.className == "item") {
+            // console.log(target)
+            setColor(target)
+        }
+    }
+
+    // 鼠标移出事件
+    container.onmouseout = function monuseOut(ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        // console.log(target)
+        // 寻找li元素
+        if (ev.target && ev.target.className == "item") {
+            setTimeout(function () {
+                deleteColor(target)
+            }, 500)
+        }
+    }
+</script>
+
+</html>

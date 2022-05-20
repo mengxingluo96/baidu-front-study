@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            padding: 0; 
+            margin:0;
+            height: 50px;
+            width: 150px;
+            border: 1px solid black;
+            border-radius: 5px;
+            list-style: none;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        li:nth-child(1){
+            border: 1px solid #e8eaec;
+        }
+
+        ul:nth-child(1) :hover{
+            background-color: #e8eaec;
+        }
+
+        li:nth-child(2){
+            /* float: left; */
+            background-color: #ed5766;
+            border: 1px solid #ed5766;
+        }
+
+        li:nth-child(3){
+            /* float: left; */
+            background-color: #1e7ab9;
+            border: 1px solid #1e7ab9;
+        }
+
+        li:nth-child(4){
+            border: 1px solid #26c6c8;
+        }
+
+        li:nth-child(5){
+            border: 1px solid #f8ac5a;
+        }
+
+        li:nth-child(6){
+            border-radius: 25px;
+            background-color: #1fb393;
+            border: 1px solid #1fb393;
+        }
+
+        li a {
+            text-decoration: none;
+            /* color: black; */
+            font-weight: bold;
+        }
+
+        #button1{
+            color: #696b6d;
+        }
+
+        #button2{
+            color: white;
+        }
+
+        #button3{
+            color: white;
+        }
+
+        #button4{
+            color: #26c6c8;
+        }
+
+        #button5{
+            color: #f8ac5a;
+        }
+
+        #button6{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#" id="button1">Default</a></li>
+        <li><a href="#" id="button2">Danger</a></li>
+        <li><a href="#" id="button3">Success</a></li>
+        <li><a href="#" id="button4">Info</a></li>
+        <li><a href="#" id="button5">Warning</a></li>
+        <li><a href="#" id="button6">Primary</a></li>
+    </ul>
+</body>
+
+</html>

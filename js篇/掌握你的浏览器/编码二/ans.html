@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #bfa;
+        }
+
+        .center {
+            margin: 100px auto;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        let timer;
+        function start() {
+            let curBody = document.querySelector("body");
+            let curP = document.querySelector(".center p");
+            // console.log(curBody)
+            timer = setInterval(function () {
+                // 
+                // 随机颜色
+                const color = '#' + parseInt(Math.random() * 0xFFFFFF).toString(16)
+                curP.innerText = color;
+                curBody.style.setProperty("background-color",color)
+            }, 1000)
+        }
+
+        function myStop(){
+            clearInterval(timer)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="center">
+        <p></p>
+        <button onclick="start()">更换背景</button>
+        <button onclick="myStop()">停止</button>
+    </div>
+</body>
+
+</html>

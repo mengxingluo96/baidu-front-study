@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS3 IMAGE Effects PRACTICE</title>
+    <style>
+        img{
+            width: 500px;
+            height: 300px;
+        }
+
+        #sepia img:hover{
+            filter: sepia(60%);
+        }
+
+        #grayscale img:hover{
+            filter: grayscale(60%);
+        }
+
+        #clipPath1 img:hover{
+            /* clip-path: circle(100px at center); */
+            animation: clipathAni 1s steps(16);
+        }
+
+        @keyframes clipathAni {
+            0%{
+                /* clip-path: circle(); */
+            }
+
+            100%{
+                clip-path: circle(100px at center)
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <!-- 滤镜效果 -->
+        <h2>CSS3 Filter Effect</h2>
+        <div>
+            <a id="sepia">
+                <img src="pic02.jpg" />
+                <p>Sepia</p>
+            </a>
+            <a id="grayscale">
+                <img src="pic03.jpg" />
+                <p>Grayscale</p>
+            </a>
+        </div>
+
+        <!-- 剪切效果 -->
+        <h2>CSS3 Clip-Path Effect</h2>
+        <div>
+            <a id="clipPath1">
+                <figure><img src="pic02.jpg" /></figure>
+                <p>剪切成圆形</p>
+            </a>
+            <a id="clipPath2">
+                <figure><img src="pic03.jpg" /></figure>
+                <p>剪切成正方形角形</p>
+            </a>
+        </div>
+        <!-- 剪变形果 -->
+        <h2>CSS3 Transform Effect</h2>
+        <div>
+            <a id="zoomIn">
+                <figure><img src="pic02.jpg" /></figure>
+                <p>Zoom In</p>
+            </a>
+            <a id="zoomOut">
+                <figure><img src="pic03.jpg" /></figure>
+                <p>Zoom Out</p>
+            </a>
+        </div>
+        <!-- 叠加效果 -->
+        <h2>CSS Mix Blend Mode Effect</h2>
+        <div>
+            <a><span>
+                    <h1>Travel</h1>
+                </span><img src="pic02.jpg" /></a>
+            <div>
+                <img src="pic03.jpg" />
+                <div>
+                    <h1>Lorem</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                        lorem nunc, sollicitudin a nisi sodales, imperdiet dignissim enim.
+                        Nam sapien quam
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+</body>
+
+</html>

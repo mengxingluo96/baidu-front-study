@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="http://images.haiwainet.cn/2022/0517/20220517095901426-121.jpg" alt="" onerror="errorPrint">
+</body>
+
+<script>
+    /*
+    load 事件类型在页面完全加载完毕的时候触发。该事件包含所有的图形图像、外部文件（如 CSS、JS 文件等）的加载，
+    也就是说，在页面所有内容全部加载之前，任何 DOM 操作都不会发生。为 window 对象绑定 load 事件类型的方法有两种。
+    */
+    window.onload = function init() {
+        console.log("页面已经加载完成");
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener("DOMContentLoaded", beforeInit, false);
+    }
+    function beforeInit() {
+        console.log("图片已经加载完成");
+    }
+
+    function errorPrint() {  // 捕获浏览器错误行为
+        console.log("图片加载错误");  // 禁止浏览器显示标准出错信息
+    }
+
+    window.beforeunload = function leave() {
+        return "再见"
+    }
+</script>
+
+</html>

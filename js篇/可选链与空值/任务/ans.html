@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+ 
+     /*  首先确认用户是否为 vip 客户
+        完成函数 isVip() 判断用户是否为 vip 用户,如果是，就返回 vip 用户的编号。如果不是返回 undefined
+
+        你们系统针对 vip 用户有翻译功能，需要获取 vip 用户国籍，显示对应国家语言。
+        完成获取 vip 用户地址。完成函数 getCountry()。返回 country 信息，如果 country 不存在就默认设置为China。
+    */
+
+
+    let vip_customer_1 = {
+        name: "Carl",
+        vip: {
+            num: "C-1001",
+            country: "USA",
+        },
+    };
+
+    let vip_customer_2 = {
+        name: "Carl",
+        vip: {
+            num: "C-1001",
+        },
+    };
+
+    let customer = {
+        name: "Jennie",
+    };
+    /**
+     * @param {object} customer
+     * @param {object} [customer.vip]
+     * @param {last} [customer.vip.country]
+     */
+    const isVip = (customer) => {
+        // your code here
+        // console.log(customer.vip.num)
+        return customer.vip?.num; 
+    }
+
+    //用例
+    console.log(isVip(vip_customer_1))     // => 'U-1001'
+    console.log(isVip(vip_customer_2))     // => 'U-1001'
+    console.log(isVip(customer))     // => 'U-1001'
+
+    /**
+     * @param {object} customer
+     * @param {object} [customer.vip]
+     * @param {last} [customer.vip.country]
+     */
+    const getCountry = (customer) => {
+        //you code here
+        return customer.vip.country ?? 'China';
+    };
+
+    //用例
+    console.log(getCountry(vip_customer_1)); // => 'USA'
+    console.log(getCountry(vip_customer_2)); // => 'China'
+</script>
+
+</html>

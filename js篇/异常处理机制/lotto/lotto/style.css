@@ -1,0 +1,122 @@
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+            background-color: #604882;
+            font-family: "Chewy"; 
+        }
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .toolPanel,.wrapper{
+            background-color: #eee;
+        }
+        .toolPanel{
+            text-align: center;
+            width: 460px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        form{
+        
+            text-align: center;
+            width: 80%;
+            margin:2rem auto;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            align-content: center;
+
+        }
+        fieldset{
+            border:none;
+           align-items: center;
+           align-content: center;
+        }
+        form label{
+            text-align: left;
+            color: #ef6d3b;
+            text-shadow: 1px 1px 1px #000;
+            font-family: "Chewy";
+            margin-left: 2rem;
+            font-weight: 800;
+        }
+         form input{
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            outline: none;
+            color:#3f2860;
+            border-radius: 5px;
+            height: 48px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ef6d3b;
+            text-shadow: 1px 1px 1px #000;
+            font-family: "Chewy";
+            font-size: 50px;
+        }
+        
+        .wrapper {
+            width: 420px;
+         
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            float: left;
+            margin-left: 50px;
+        }
+        
+        .wrapper .ball {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #3d3c3a;
+            border-radius: 100%;
+            float: left;
+            background-color: #fff;
+            margin: 10px;
+            font-weight: 500;
+            box-shadow: 1px 1px 0.5px #000;
+        }
+        .wrapper .ball.origin{
+            background-color: #fff;
+            color: #3d3c3a;
+        }
+        .wrapper .ball.choose{
+            background-color: #fa8b60;
+            color: white;
+        }
+        
+        #generate {
+
+            background-color: #ef6d3b;
+            outline: none;
+            height: 48px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin: 2rem 4rem;
+            width: 120px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            font-family: "Chewy";
+            color: #3f2860;
+        }
+
+        #history p {
+            font-weight: 500;
+            color: #3d3c3a;
+        }
+        .tip{
+            color: #a2ff50;
+            text-align: center;
+        }

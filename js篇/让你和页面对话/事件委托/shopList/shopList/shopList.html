@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <link  rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>购物清单添加/删除</h1>
+    <form id="shopping-form">
+        <label for="item-name">消费名称</label>
+        <input id="item-name" type="text" placeholder="输入购物名称">
+        <input type="submit" class="btn btn-default" value="添加" id="submitBtn" onclick="addItemToList()">
+    </form>
+
+    <ul id="shopping-list" onclick="removeItemFromList()">
+        <!--在此处添加购物清单列表项-->
+    </ul>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --primary-1: #1c6c9e;
+  --primary-2: #1d465f;
+  --primary-3: #0a2e46;
+  --primary-4: #072031;
+  --primary-5: #051925;
+
+  --neutral-1: #2c2c2c;
+  --neutral-2: #434343;
+  --neutral-3: #94868b;
+  --neutral-4: #d9cfd3;
+  --neutral-5: #f2ecee;
+
+  --accent-1: #458179;
+  --accent-2: #4da296;
+  --accent-3: #8dd8cf;
+  --accent-4: #92cfc7;
+  --accent-5: #d7f2ef;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+}
+button,
+input {
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 30px;
+  text-decoration: none;
+  max-width: 120px;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 220ms, transform 220ms;
+  border: none;
+}
+
+.btn-default {
+  color: var(--white);
+  background-color: var(--primary-1);
+}
+.btn-default:hover {
+  background-color: var(--primary-2);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+input:not(.btn) {
+  font-size: 16px;
+  margin-bottom: 1.7em;
+  padding: 0.75em 0.5em;
+  background-color: var(--neutral-5);
+  width: 100%;
+  max-width: 250px;
+  border: none;
+  border-left: 7px solid var(--neutral-4);
+}
+
+::placeholder {
+  color: var(--neutral-4);
+}
+
+input:not(.btn):focus {
+  outline: none;
+  border-left: 7px solid var(--accent-1);
+}
+
+#shopping-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 10px;
+}
+
+#shopping-list li {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+#shopping-list p {
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}

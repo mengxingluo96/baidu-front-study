@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>留言板</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <body>
+    <div class="container">
+      <div class="comment-box">
+        <button class="close" onclick="toggleComment()">关闭留言</button>
+        <div class="comment-form">
+          <div class="header">留言板</div>
+
+          <form action="#" onsubmit="event.preventDefault(); postComment()">
+            <div>
+              <input type="text" id="name" placeholder="输入您的姓名..." />
+            </div>
+            <div>
+              <textarea id="comment" rows="3" cols="30" placeholder="输入您的留言..."></textarea>
+            </div>
+            <button type="submit">留言</button>
+          </form>
+        </div>
+        <div>
+          <h4 class="header">留言列表</h4>
+          <div id="comments">
+            <!--插入留言-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

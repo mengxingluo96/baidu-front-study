@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * @param {string} todos
+         */
+        const getCountTodos = (todos) => {
+            return todos.split(",").length;
+        };
+
+        // 测试用例
+        console.log(getCountTodos("Laundry, Wash dishes, Clean table")); // 3
+        console.log(getCountTodos("Feed cat, Degrease bike chain")); // 2
+
+        /*
+        去掉字符串str中，连续重复的地方
+        */
+        function removeRepetition(str) {
+            // do something
+            let res = "";
+            let index = 0;
+            while (index < str.length) {
+                let curStr = str.slice(index, index + 1);
+                if(res.length == 0 || res.slice(-1) != curStr){
+                    // console.log(11)
+                    res = res.concat(curStr);
+                }
+
+                index++;
+            }
+
+            return res;
+        }
+
+        // 测试用例
+        console.log(removeRepetition("aaa")); // ->a
+        console.log(removeRepetition("abbba")); // ->aba
+        console.log(removeRepetition("aabbaabb")); // ->abab
+        console.log(removeRepetition("")); // ->
+        console.log(removeRepetition("abc")); // ->abc
+
+        /**
+        * @@param {string} str
+        * @return {Boolean} 如果是返回 true，如果不是回文字符串 返回 false
+        */
+        function isPalindromicString(str) {
+            let reverseStr = "";
+            let index = str.length - 1;
+            while(index >= 0){
+                let curStr = str.charAt(index--);
+                // console.log(curStr);
+                reverseStr = reverseStr.concat(curStr);
+            }
+
+            return reverseStr == str;
+        }
+
+        // 测试用例
+        console.log(isPalindromicString("aaa")); // ->true
+        console.log(isPalindromicString("madam")); // ->true
+        console.log(isPalindromicString("hello")); // ->false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .done {
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <div id="form">
+        <!-- <p class="done">asdasd</p> -->
+        <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off"
+            onkeypress="if(event.keyCode==13){Javascript:formSubmit()}">
+        <ul class="todos" id="todos">
+
+        </ul>
+    </div>
+</body>
+<script>
+    /*
+    需求说明
+    用户在输入框中输入要做的任务，键盘按回车，在输入框下方，id 为 tidos 的 ul 中添加一条表示任务 li 元素
+    鼠标点击任务 li 元素，表示任务已经完成。相应样式变化：划掉任务，字体颜色也相应变成浅色
+*/
+    function formSubmit(e) {
+        let inputText = document.getElementById("input").value;
+        document.getElementById("input").value = ""
+        // console.log(inputText)
+        let todos = document.getElementById("todos");
+        let newLi = document.createElement("li");
+        newLi.innerHTML = inputText;
+        todos.appendChild(newLi);
+    }
+
+    // 事件委派
+    let ulDiv = document.getElementById("todos");  
+    ulDiv.addEventListener('click', function (ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        // console.log(target)
+        // 寻找li元素
+        if (ev.target && ev.target.nodeName.toUpperCase() == "LI") {
+            target.classList.add("done");
+        }
+    }, false);
+</script>
+
+</html>

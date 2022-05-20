@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>请输需要判断的水仙花数(三位数):</label><input type="text" id="num">
+    <br>
+    <button onclick="btn()">开始判断</button>
+    <script>
+        function btn() {
+            let num = document.getElementById("num").value;
+            let flag = numDaffodils(num);
+            if (flag) {
+                alert("是水仙花数");
+            } else {
+                alert("不是水仙花数");
+            }
+        }
+
+        function numDaffodils(num) {
+            let numStr = "".concat(num);
+            let n = numStr.length;
+
+
+            let copyNum = num;
+            let res = 0;
+            while (copyNum != 0) {
+                let curNum = copyNum % 10;
+                res += Math.pow(curNum, n);
+                copyNum /= 10;
+                copyNum = Math.floor(copyNum);
+            }
+            console.log(res)
+            // 判断是否为水仙花数
+            return res == num;
+        }
+    </script>
+</body>
+
+</html>

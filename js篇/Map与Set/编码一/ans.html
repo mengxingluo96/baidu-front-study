@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //使用 Set 去除数组的重复
+    function dedupe(array) {
+        let newArr = [];
+        let curSet = new Set();
+        array.forEach(element => {
+            if (!curSet.has(element)) {
+                curSet.add(element);
+                newArr.push(element);
+            }
+        });
+
+        return newArr;
+    }
+
+    //利用 Set 实现并集（Union）
+    function union(arr1, arr2) {
+        let curSet = new Set();
+        arr1.forEach(element => {
+            if (!curSet.has(element)) {
+                curSet.add(element);
+            }
+        });
+        arr2.forEach(element => {
+            if (!curSet.has(element)) {
+                curSet.add(element);
+            }
+        });
+
+        return curSet;
+    }
+    //利用 Set 实现交集（Union）
+    function intersect(arr1, arr2) {
+        let curSet = new Set();
+        let realSet = new Set();
+        arr1.forEach(element => {
+            if (!curSet.has(element)) {
+                curSet.add(element);
+            }
+        });
+        // console.log(arr2)
+        arr2.forEach(element => {
+            if (curSet.has(element) && !realSet.has(element)) {
+                realSet.add(element);
+            }
+        });
+
+        return realSet;
+    }
+    //利用 Set 实现差集（Union）
+    function difference(arr1, arr2) {
+        let curSet = new Set();
+        arr1.forEach(element => {
+            if (!curSet.has(element)) {
+                curSet.add(element);
+            }
+        });
+        // console.log(arr2)
+        arr2.forEach(element => {
+            if (curSet.has(element)) {
+                curSet.delete(element);
+            }
+        });
+
+        return curSet;
+    }
+
+    //测试用例
+    console.log(dedupe([1, 1, 2, 3])); // [1, 2, 3]
+    let a = new Set([1, 2, 3]);
+    let b = new Set([4, 3, 2]);
+    console.log(union(a, b)); // -> Set {1, 2, 3, 4}
+    console.log(intersect(a, b)); // -> Set {2, 3}
+    console.log(difference(a, b)); // ->  Set {1}
+</script>
+
+</html>

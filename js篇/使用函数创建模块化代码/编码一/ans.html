@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //声明一个叫做 showMessage() 的函数并返回 "您好，陌生人"。将 showMessage() 函数返回的值输出到控制台中
+    /*
+    * QUIZ REQUIREMENTS
+    * - Your code should have a `showMessage()` function
+    * - Your `laugh()` function should return the correct output
+    * - Your code should print `\"hello,stranger!\"` by calling the `showMessage()` function inside `console.log()`
+    * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+    */
+    // your code goes here
+    function showMessage(name){
+        if(name){
+            return `你好,${name}`;
+        }
+        return "你好，陌生人";
+    }
+    console.log(showMessage());
+    console.log(showMessage('张三'));
+</script>

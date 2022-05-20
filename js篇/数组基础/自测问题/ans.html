@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const grades = [1, 2, 13, 15];
+    grades.push(20);
+    // console.log(grades);
+
+    logGrades(grades);
+
+    function logGrades(grades) {
+        grades.forEach(function (grade) {
+            console.log(grade);
+            return 10;
+        });
+        return 20;
+    }
+</script>
+
+</html>

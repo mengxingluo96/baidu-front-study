@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: absolute;
+            width: 980px;
+            height: 1386px;
+            border: 1px solid gray;
+            margin: 50px;
+        }
+
+        .header {
+            position: absolute;
+            margin: 0 44px;
+            height: 61px;
+            width: 892px;
+            border-bottom: 2px solid #938e8c;
+        }
+
+        .headerLeft {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 61px;
+            width: 110px;
+            background-color: #d55d5c;
+        }
+
+        .headerLeft p {
+            font-size: 12px;
+            color: #ffffff;
+            position: absolute;
+            bottom: 3px;
+            left: 3px;
+        }
+
+        .header p {
+            font-size: 12px;
+            color: #d45d5c;
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+        }
+
+        .center {
+            position: relative;
+            height: 1260px;
+            /* background-color: black; */
+            margin: 63px 44px;
+        }
+
+        .body1 {
+            position: absolute;
+            margin-top: 30px;
+            height: 301px;
+            width: 100%;
+            /* background-color: gray; */
+        }
+
+        .body1 img {
+            float: left;
+            width: 641px;
+            height: 301px;
+        }
+
+        .body1Right {
+            float: right;
+            border-top: 2px solid #cc8091;
+
+            width: 203px;
+            height: 301px;
+            /* background-color: orange; */
+        }
+
+        .rightText1 {
+            margin-top: 10px;
+        }
+
+        .rightText1 :nth-child(1) {
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        .rightText1 :nth-child(2) {
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        .rightText1 :nth-child(3) {
+            font-size: 12px;
+            color: #676767;
+        }
+
+        .rightText1 :nth-child(3) {
+            font-size: 12px;
+        }
+
+        .rightText2 {
+            float: left;
+
+            width: 80px;
+            height: 100px;
+            /* background-color: red; */
+        }
+
+        .rightText2 p {
+            font-size: 116px;
+            color: #75b86b;
+        }
+
+        .rightText3 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            height: 70px;
+            width: 190px;
+            /* background-color: orange; */
+        }
+
+        .rightText3 p:nth-child(1) {
+            font-size: 55px;
+            color: #cc8091;
+        }
+
+        #rightToRight {
+            position: absolute;
+            left: 85px;
+            bottom: 5px;
+        }
+
+        #rightToRight p:nth-child(1) {
+            font-size: 21px;
+            color: #cc8091;
+        }
+
+        #rightToRight p:nth-child(2) {
+            font-size: 12px;
+            color: #cc8091;
+        }
+
+
+        .body2 {
+            position: absolute;
+            top: 370px;
+            left: 0;
+        }
+
+        .body2Left {
+            float: left;
+            ;
+        }
+
+        .body2Mid {
+            margin-left: 20px;
+            float: left;
+        }
+
+        .body2Right {
+            margin-left: 20px;
+            float: left;
+        }
+
+        .centerHeader1 {
+            color: #418c59;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .centerBody1 {
+            margin-top: 8px;
+            width: 220px;
+            height: 220px;
+            font-size: 12px;
+            color: #767777;
+            line-height: 16px;
+        }
+
+        .centerHeader2 {
+            color: #d2994f;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .centerBody2 {
+            margin-top: 8px;
+            width: 220px;
+            height: 220px;
+            font-size: 12px;
+            color: #231815;
+            line-height: 16px;
+        }
+
+        .centerHeader3 {
+            color: #cc7680;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .centerBody3 {
+            margin-top: 8px;
+            width: 150px;
+            height: 80px;
+            font-size: 12px;
+            color: #767777;
+            line-height: 24px;
+        }
+
+        .centerBodyBottom {
+            width: 150px;
+            height: 50px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #cd4a48;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .body3 {
+            width: 100%;
+            position: absolute;
+            height: 650px;
+            bottom: 40px;
+            left: 0;
+            /* background-color: orange; */
+        }
+
+        .body3box1 {
+            float: left;
+            display: inline;
+            width: 415px;
+            height: 200px;
+            /* background-color: red; */
+            /* border-bottom: 2px solid #11456b; */
+        }
+
+        .body3box1 p:nth-child(1) {
+            display: inline;
+            float: left;
+            color: #f5e327;
+            font-size: 64px;
+            font-weight: bold;
+            font-style: italic;
+            margin-right: 20px;
+        }
+
+        .body3box1 p:nth-child(2) {
+            display: inline;
+            /* float: left; */
+            color: #11456b;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .body3box1 p:nth-child(3) {
+            color: #11456b;
+            font-size: 33px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #11456b;
+            width: 415px;
+        }
+
+        .body3box2 {
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+
+        .body3box2 img {
+            width: 458px;
+            height: 275px;
+        }
+
+        .body3box3 {
+            position: absolute;
+            top: 190px;
+            left: 0;
+            width: 415px;
+            height: 450px;
+            /* background-color: red; */
+        }
+
+        .body3box3 p::first-letter {
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            float: left;
+            font-size: 70px;
+            color: #f5e327;
+        }
+
+        .body3box3 p {
+            display: inline;
+            font-size: 12px;
+            color: #767777;
+            float: left;
+            /* line-height: 16px; */
+        }
+
+        .body3box3 img {
+            float: right;
+            width: 160px;
+            height: 270px;
+            margin: 10px;
+            margin-right: 0;
+        }
+
+        .body3box4 {
+            width: 459px;
+            height: 318px;
+            background-color: #eeeed6;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .redbox {
+            width: 260px;
+            height: 160px;
+            background-color: #d55d5c;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .redLeft {
+            border-right: 2px solid white;
+            width: 70px;
+            height: 86px;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+        }
+
+        .redLeft p {
+            position: absolute;
+            top: -30px;
+            right: 0px;
+            font-size: 110px;
+            color: #ffffff;
+        }
+
+        .redRight {
+            position: absolute;
+            top: 45px;
+            left: 75px;
+            /* background-color: #bfa; */
+        }
+
+        .redRight p {
+            margin-left: 5px;
+            color: white;
+        }
+
+        .redRight p:nth-child(-n+2) {
+            font-size: 18px;
+            font-style: italic;
+            line-height: 24px;
+        }
+
+        .redRight p:nth-child(n+3) {
+            margin-left: 6px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .rightBottom {
+            position: absolute;
+            bottom: 35px;
+            right: 0;
+            width: 180px;
+            height: 110px;
+            /* background-color: #bfa; */
+        }
+
+        .leftTop{
+            /* position: absolute;
+            left: 0;
+            top: 0; */
+            /* display: inline; */
+            width: 30px;
+            height: 30px;
+            /* background-color: red; */
+            font-size: 72px;
+        }
+
+        .rightBot{
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            width: 30px;
+            height: 30px;
+            /* background-color: red; */
+            font-size: 72px;
+        }
+
+        .botText{
+            /* display: inline; */
+            font-size: 14px;
+            color: #5a5b5b;
+            font-style: italic;
+            line-height: 18px;
+        }
+
+        .headerbox1 {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+        }
+
+        .headerbox2 {
+            position: absolute;
+            left: 20px;
+            top: 70px;
+        }
+
+        .headerbox3 {
+            position: absolute;
+            left: 20px;
+            top: 110px;
+        }
+
+        .triangle {
+            float: left;
+            width: 0px;
+            height: 0px;
+            border: 5px solid #094473;
+            border-color: transparent transparent #094473 transparent;
+            border-width: 9px 5px 9px 5px;
+        }
+
+        .textBox {
+            margin-left: 10px;
+            width: 380px;
+            height: 40px;
+            float: left;
+            /* background-color: red; */
+        }
+
+        .textBox p:nth-child(1) {
+            /* letter-spacing: 1px; */
+            display: inline;
+            font-size: 16px;
+            color: #5a5b5b;
+            line-height: 20px;
+            text-align: justify;
+        }
+
+        .textBox p:nth-child(2) {
+            display: inline;
+            font-size: 12px;
+            color: #5a5a5a;
+            font-style: italic;
+            text-align: right;
+        }
+
+        .footer {
+            border-top: 2px solid #938e8c;
+            width: 892px;
+            height: 61px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin: 0 44px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #d45d5c;
+            position: absolute;
+            top: 3px;
+            right: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="headerLeft">
+            <p>ife.baidu.com</p>
+        </div>
+        <p>2016.03</p>
+    </div>
+
+    <div class="center">
+        <div class="body1">
+            <img src="./images/Snipaste_2022-05-12_16-07-23.jpg" alt="">
+            <div class="body1Right">
+                <div class="rightText1">
+                    <p>ABOUT</p>
+                    <p>TECHNOLOGE</p>
+                    <p>About technologe about technologe about technologe</p>
+                </div>
+
+                <div class="rightText2">
+                    <p>700</p>
+                </div>
+
+                <div class="rightText3">
+                    <p>3.2</p>
+                    <div id="rightToRight">
+                        <p>CSS</p>
+                        <p>CSSSCSSSS</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body2">
+            <div class="body2Left">
+                <div class="centerHeader1">
+                    <p>What</p>
+                </div>
+                <div class="centerBody1">
+                    <p>端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                        前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+                </div>
+            </div>
+
+            <div class="body2Mid">
+                <div class="centerHeader2">
+                    <p>When</p>
+                </div>
+                <div class="centerBody2">
+                    <p>端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                        前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+                </div>
+            </div>
+
+            <div class="body2Right">
+                <div class="centerHeader3">
+                    <p>How</p>
+                </div>
+                <div class="centerBody3">
+                    <p>端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+                </div>
+
+                <div class="centerBodyBottom">
+                    <p>What-------- 40%</p>
+                    <p>What-------- 30%</p>
+                    <p>What-------- 30%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="body3">
+            <div class="body3box1">
+                <p>THE </p>
+                <p>TECHNOLOGE OF FRONT</p>
+                <p>前端技术领域</p>
+            </div>
+            <div class="body3box2">
+                <img src="./images/Snipaste_2022-05-14_14-20-38.jpg" alt="">
+            </div>
+            <div class="body3box3">
+                <p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                    前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+                </p>
+                <img src="./images/Snipaste_2022-05-14_14-21-00.jpg" alt="">
+            </div>
+            <div class="body3box4">
+
+                <div class="headerbox1">
+                    <div class="triangle"></div>
+                    <div class="textBox">
+                        <p>前端前端前端前端前端前端前端................................</p>
+                        <p>前端</p>
+                    </div>
+                </div>
+
+                <div class="headerbox2">
+                    <div class="triangle"></div>
+                    <div class="textBox">
+                        <p>前端前端前端前端......................................................</p>
+                        <p>前端前</p>
+                    </div>
+                </div>
+
+                <div class="headerbox3">
+                    <div class="triangle"></div>
+                    <div class="textBox">
+                        <p>前端前端前端前端前端前端前端...............................</p>
+                        <p>前端</p>
+                    </div>
+                </div>
+
+                <div class="redbox">
+                    <div class="redLeft">
+                        <p>0</p>
+                    </div>
+                    <div class="redRight">
+                        <p>ONE TWO</p>
+                        <p>THREE FORE THREE</p>
+                        <p>hello world hello world</p>
+                        <p>hello world</p>
+                    </div>
+                </div>
+                <div class="rightBottom">
+                    <div class="leftTop">"</div>
+                    <div class="botText">hello world hello world hello world hello world hello world hello world hello world
+                        hello world</div>
+                    <div class="rightBot">"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>ife.baidu.com</p>
+    </div>
+
+</body>
+
+</html>

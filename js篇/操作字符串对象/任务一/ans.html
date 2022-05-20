@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {string} name
+ */
+        const convertToSlug = (name) => {
+            //your code here
+            return name.replaceAll(" ", "-");
+        };
+
+        // 测试用例
+        console.log(convertToSlug("to do list")); // "to-do-list"
+        console.log(convertToSlug("My SeCond BlOg")); // "my-second-blog"
+        console.log(convertToSlug("Grade inquiry of CET-4&6")); // "grade-inquiry-o"
+    </script>
+</body>
+
+</html>

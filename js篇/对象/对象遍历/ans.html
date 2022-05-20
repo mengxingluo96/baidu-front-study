@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let shoppingList = {
+        hamburger: 12,
+        milk: 5,
+        orange: 25,
+        banana: 49,
+        ipad: 10111,
+    };
+
+    /**
+     * @description 获取购物清单所有的商品
+     * @method getKeys
+     * @param {Object} obj 对象
+     * @return {Array} 返回包含对象所有键名的数组
+     */
+    function getKeys(obj) {
+        // your complement
+        return Object.keys(obj);
+    }
+
+    /**
+     * @description 获取购物清单所有商品的价格
+     * @method getVals
+     * @param {Object} obj 对象
+     * @return {Array} 返回包含对象所有键值的数组
+     */
+    function getVals(obj) {
+        // your complement
+        return Object.values(obj);
+    }
+
+    /**
+     * @description 计算购物清单总价
+     * @method sumshoppingList
+     * @param {Object} obj 对象
+     * @return {Number} 返回购物清单的总价
+     */
+    function sumshoppingList(obj) {
+        // your complement
+        let vals = Object.values(obj);
+        let val = 0;
+        vals.forEach(element => {
+            val += element;
+        });
+
+        return element;
+    }
+
+    /**
+     * @description 给购物清单排序
+     * @method sumshoppingList
+     * @param {Object} obj 对象
+     * @param {Boolean} ascendingOrder 如果值为true，就从小到大排序，值为false，就从大到小排序
+     * @return {Object} 返按从大到小或者从小到大规律排序的购物清单列表
+     */
+    function sumshoppingList(obj, ascendingOrder) {
+        // your complement
+    }
+</script>
+
+</html>

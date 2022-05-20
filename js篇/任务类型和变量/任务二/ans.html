@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /**
+     *  满 300 减 30，满 200 减 10，满 100 减 5.
+        会员打 9.8 折
+        当两个优惠条件都满足时，就先打 9.8 折，再进行满减
+    * @method calculateSum
+    * @param {number }price 打折钱的总消费额
+    * @param {Boolean}vip 是否为 vip
+    * @return {number} 返回打折后的总金额
+    */
+    function calculateSum(price, vip) {
+        if (vip) {
+            price *= 0.98;
+        }
+        
+        if (price >= 300) {
+            price -= 30;
+        } else if (price >= 200) {
+            price -= 10;
+        } else if (price >= 100) {
+            price -= 5;
+        }
+
+        return price;
+        // your code here
+    }
+    console.log(calculateSum(300, false)) // -> 270
+    console.log(calculateSum(300, true)) // -> 284
+</script>

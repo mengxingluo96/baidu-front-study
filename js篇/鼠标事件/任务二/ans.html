@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            float: left;
+            margin-right: 50px;
+            width: 200px;
+            height: auto;
+            background-color: #9b9b9e;
+        }
+
+        .noDoneHeader {
+            width: auto;
+            height: 60px;
+            margin: 5px;
+            background-color: #f7772a;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .doneHeader {
+            width: auto;
+            height: 60px;
+            margin: 5px;
+            background-color: #11c767;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .item {
+            width: auto;
+            height: 40px;
+            margin: 5px;
+            background-color: white;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .smallItem {
+            width: 140px;
+            height: 28px;
+            margin: 5px;
+            background-color: white;
+            opacity: 0.5;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="noDoneHeader">
+            未完成
+        </div>
+        <div class="item">编曲</div>
+        <div class="item">健身</div>
+        <div class="item">看电影</div>
+        <div class="item">开会</div>
+        <div class="item">学习</div>
+        <div class="item">购物</div>
+        <div class="item">旅游</div>
+    </div>
+
+    <div class="wrap">
+        <div class="doneHeader">
+            完成
+        </div>
+    </div>
+</body>
+
+<script>
+    /**
+     * 拖放功能是一项常见功能,它通过让用户抓取对象并将其拖放到他们想要的位置来创建更直观的用户流程，现在请您实现任务列表拖拽效果
+        如下效果图，左右是为完成的任务列表，右侧是已做的任务列表，里面的任务列表可以通过拖拽来左右移动
+        被选择拖拽的任务在拖拽过程后，在原容器中消失，跟随鼠标移动
+        注意拖拽释放后，要添加到准确的位置
+        拖拽到什么位置认为是可以添加到新容器的规则自己定
+        注意交互中良好的用户体验和使用引导
+        实现效果如下
+     */
+
+    window.onload = function () {
+        let wrapBox = document.getElementsByClassName("wrap")[0];
+        // 实现鼠标拖拽
+        // 鼠标按下
+        wrapBox.onmousedown = (ev) => {
+            ev = ev || window.event;
+            let target = ev.target || ev.srcElement;
+            // 寻找子元素
+            if (ev.target && ev.target.className == "item") {
+                target.classList.remove("item");
+                target.classList.add("smallItem");
+            }
+        }
+    }
+</script>
+
+</html>

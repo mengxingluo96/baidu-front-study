@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="root">
+    <ul>
+        <li class="one">a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    <button onclick="convertDomToJson()">将DOM节点转化为JSON字符串</button>
+</body>
+
+<script>
+    // 实现将body标签以内的所有dom节点按层次关系，转化为json字符串
+    function convertDomToJson() {
+        let root = document.getElementsByClassName("root")[0];
+        //your complement
+        let curJson = toJson({}, root)
+        let jsonStr = JSON.stringify(curJson);
+        console.log(jsonStr)
+        return jsonStr;
+    }
+
+    function toJson(obj, root) {
+        // 标签名和属性值
+        obj['tagName'] = root.nodeName.toUpperCase();
+        obj['className'] = root.className.toLowerCase();
+
+        obj['childs'] = []
+        for (let i = 0; i < root.children.length; i++) {
+            // 递归
+            obj['childs'].push(toJson({}, root.children[i]))
+        }
+
+
+        return obj
+    }
+</script>
+
+</html>

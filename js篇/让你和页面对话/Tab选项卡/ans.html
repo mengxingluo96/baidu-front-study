@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    实现一个 Tab 选项卡项目
+    在这个项目中，您将实现一个 Tab 选项卡 。每当用户单击一个选项卡时，它都应该突出显示，并且应该显示相关内容。
+
+    任务说明
+
+    首先选给所有选项卡（.tab）绑定 click 事件侦听器。
+    单击选项卡，给该选项卡添加样式突出显示，并且显示对应选项卡的内容 。比如点击标题一,显示 section 元素内容为标题一对应内容
+    请使用 dataset 来显示选项卡控制内容显示的关联功能。提示：给每一个.tab 元素添加 data-content 属性，
+    data-content 值为对应显示 section 元素的选择器，这样来实现关联。
+     -->
+    <div class="tabs">
+        <!-- 导航栏 -->
+        <nav class="nav-tabs">
+            <ul>
+                <li>
+                    <a class="tab active" href="javascript:;" data-content="box1">标题一</a>
+                </li>
+                <li><a class="tab" href="javascript:;" data-content="box2">标题二</button></a>
+                <li>
+                    <a class="tab" href="javascript:;" data-content="box3">标题三</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 内容栏 -->
+        <section class="hidden" id="box1">标题一对应内容</section>
+        <section class="hidden" id="box2">标题二对应内容</section>
+        <section class="hidden" id="box3">标题三对应内容</section>
+    </div>
+</body>
+
+<script>
+    let ulDiv = document.getElementsByTagName("ul")[0];
+    ulDiv.addEventListener("click", function (ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;    // srcElement是window.event的一个属性，表示产生这个事件的源对象
+        // console.log(target)
+        if (ev.target && ev.target.nodeName.toUpperCase() == "A") {
+            let curELe = document.getElementById(target.dataset.content);
+            let sectionArr = document.getElementsByTagName("section");
+            // console.log(sectionArr)
+            for (let index = 0; index < sectionArr.length; index++) {
+                sectionArr[index].classList.add("hidden");
+            }
+            curELe.classList.remove("hidden");
+            // target.classList.remove("hidden");
+        }
+    })
+</script>
+
+<script>
+
+</script>
+
+</html>

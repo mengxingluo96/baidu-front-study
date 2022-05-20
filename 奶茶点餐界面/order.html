@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <title>Forms Review</title>
+</head>
+
+<body>
+    <section id="overlay">
+
+        <p id="logo">Order your milktea!</p>
+        <hr>
+        <!--在这里进行您的代码编写-->
+
+        <form action="./submission.html" method="post">
+            <label>你需要什么口味的奶茶?</label>
+            <input type="text">
+            <hr>
+
+            <label>你想要几杯?</label>
+            <input type="text">
+            <hr>
+
+            <label>你想要的糖分量</label><br>
+            无糖
+            <progress value="1" max="5"></progress>
+            全糖
+            <hr>
+
+            <label>你想要什么顶料?</label>
+            <br>
+            <label> <input type="checkbox" value="icecream">冰淇淋</label>
+            <label> <input type="checkbox" value="milk">奶盖</label>
+            <label> <input type="checkbox" value="keke">可可粉</label>
+            <hr>
+
+            <label>你需要加冰吗？</label>
+            <br>
+            <label> <input type="radio">Yes</label>
+            <label> <input type="radio">No</label>
+            <hr>
+
+            <label>你需要加什么料</label>
+            <select>
+                <option value="zhenzhu">珍珠</option>
+                <option value="boba">波霸</option>
+                <option value="buting">布丁</option>
+            </select>
+            <hr>
+
+            <label>你要什么规格</label>
+            <input type="text">
+            <hr>
+
+            <label>你还有什么别的要求</label>
+            <br>
+            <textarea id="bigText"></textarea>
+            <hr>
+
+            <label>您的联系方式</label>
+            <input type="text">
+            <hr>
+
+            <button>submit</button>
+        </form>
+
+    </section>
+</body>
+
+<style>
+    body {
+        font-family: Rubik, Arial;
+    }
+
+    form {
+        text-align: center;
+        line-height: 30px;
+        height: 80%;
+        overflow: auto;
+    }
+
+    form hr {
+        width: 15%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #overlay {
+        width: 80%;
+        margin: 3% auto;
+        height: 95vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 40px;
+        border: 1px solid black;
+        max-width: 600px;
+    }
+
+    #overlay .done {
+        height: 100px;
+        display: block;
+        margin: auto;
+        line-height: 100px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 2em;
+
+    }
+
+    #logo {
+        height: 100px;
+        display: block;
+        margin: auto;
+        line-height: 100px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 2.5em;
+    }
+
+
+    label {
+        margin-right: 25px;
+    }
+
+    #bigText{
+        height: 40px;
+        width: 400px;
+    }
+</style>
+
+</html>

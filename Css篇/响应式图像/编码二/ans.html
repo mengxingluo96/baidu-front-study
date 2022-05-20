@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:575px) {
+            .box1{
+                display: none;
+            }
+            .box2{
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:968px) {
+            .box2{
+                display: none;
+            }
+            .box3{
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:768px)  {
+            .box1{
+                display: none;
+            }
+            .box3{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="http://via.placeholder.com/500" alt="Big">
+    </div>
+
+    <div class="box2">
+        <img src="http://via.placeholder.com/400" alt="Medium">
+    </div>
+
+    <div class="box3">
+        <img src="http://via.placeholder.com/200" alt="Small">
+    </div>
+</body>
+
+</html>

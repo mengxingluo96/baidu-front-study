@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            "monday - 500ml",
+            "mONday - 330",
+            "monday - 150ml",
+            "Tuesday - 100ml",
+            "Tuesday - 330ml",
+            "weDnesDay - 230",
+            "TursDAy - 330ml",
+            "Friday - 500",
+            "Saturday - 100ml",
+            "sunday - 250",
+            "sunday - 100ml",
+        ];
+
+        let newArr = data.map(
+            // 格式化字符串
+            function format(str) {
+                str = str.toLowerCase();
+                let begin = str.slice(0, 1);
+                let remain = str.slice(1);
+                begin = begin.toUpperCase();
+                str = begin.concat(remain);
+
+                str = str.replaceAll("-", ":");
+
+                let endStr = str.slice(-2);
+                if (endStr != 'ml') {
+                    str = str.concat('ml');
+                }
+                return str;
+            });
+
+        // TODO: 实现检索功能
+        /**
+         * @param {string} day
+         * @param {Array} data
+         */
+        const query = (day, data) => {
+            day = day.trim();
+            day = day.toLowerCase();
+            // console.log(data)
+            let res = [];
+            data.forEach(element => {
+                let cutSr = element.toLowerCase();
+                let index = cutSr.indexOf(day);
+
+                if (index != -1) {
+                    res.push(element);
+                }
+            });
+
+
+            return res;
+            //your code here
+        };
+
+        // 测试用例
+        console.log(query(" Tuesday   ", newArr)); // ["Tuesday - 100ml","Tuesday - 330ml"]
+        console.log(query("Friday", newArr)); // ["Friday - 500ml"]
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            border: 5px inset indianred;
+        }
+
+        ul li>ol {
+            background-color: #eee;
+        }
+
+        ul ol ol {
+            border: 5px dashed aqua;
+        }
+
+        li:first-child{
+            font-weight: bold;
+            border-bottom: 5px inset indianred;
+            background-color: black;
+            color: white;
+        }
+
+        li:last-child{
+            font-style: italic;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<!-- 
+    选中第一层列表，添加外边框
+    选中第二层列表，设置背景颜色为#eee
+    选中第三层列表,添加虚线外边框
+    选中每一个列表的第一个列表项目设置字体为粗体,添加下边框，添加背景颜色为黑色，字体颜色为白色
+    选中第三层列表，给最后一个列表项 li，设置字体为斜体，字体为白色，添加背景颜色为黑色。
+ -->
+
+<body>
+    <ul>
+        <li>
+            第一层列表第一项
+            <ol>
+                <li>第二层列表第一项</li>
+                <li>第二层列表第二项</li>
+                <li>
+                    第二层列表第三项
+                    <ol>
+                        <li>第三层列表第一项</li>
+                        <li>第三层列表第二项</li>
+                        <li>第三层列表第三项</li>
+                    </ol>
+                </li>
+                <li>第三层列表第四项</li>
+            </ol>
+        </li>
+        <li>第一层列表第二项</li>
+        <li>第一层列表第三项</li>
+    </ul>
+</body>
+
+</html>

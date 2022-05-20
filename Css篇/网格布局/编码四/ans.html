@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 90%;
+        }
+
+        @media screen and (max-width:1000px) {
+            .wrap1 {
+                display: none;
+            }
+
+            .wrap2 {
+                display: none;
+            }
+
+            .wrap3 {
+                display: grid;
+                /* grid-template-columns: 100%; */
+                grid-template-rows: 100px;
+
+                grid-gap: 20px;
+
+                grid-template-areas:
+                    "header"
+                    "left1"
+                    "mid1"
+                    "mid1"
+                    "right1"
+                    "footer"
+                ;
+            }
+        }
+
+        @media screen and (min-width:1400px) {
+            .wrap1 {
+                display: grid;
+                grid-template-columns: 400px 800px 400px;
+                grid-template-rows: 100px 200px 100px;
+                grid-gap: 20px;
+
+                grid-template-areas:
+                    "header header header"
+                    "center1 center1 center1"
+                    "footer footer footer"
+                ;
+            }
+
+            .wrap2 {
+                display: none;
+            }
+
+            .wrap3 {
+                display: none;
+            }
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #999999;
+        }
+
+        .center1 {
+            grid-area: center1;
+            display: grid;
+            grid-template-columns: 25% auto 25%;
+            grid-gap: 20px;
+            grid-template-areas:
+                "left1 mid1 right1"
+            ;
+        }
+
+        .left1 {
+            grid-area: left1;
+            background-color: #444444;
+        }
+
+        .mid1 {
+            grid-area: mid1;
+            background-color: #444444;
+        }
+
+        .right1 {
+            grid-area: right1;
+            background-color: #999999;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #999999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap1">
+        <div class="header"></div>
+        <div class="center1">
+            <div class="left1"></div>
+            <div class="mid1"></div>
+            <div class="right1"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+    <!-- <div class="wrap2">
+        <div class="header"></div>
+        <div class="center1">
+            <div class="left1"></div>
+            <div class="mid1"></div>
+            <div class="right1"></div>
+        </div>
+        <div class="footer"></div>
+    </div> -->
+
+    <div class="wrap3">
+        <div class="header"></div>
+        <div class="left1"></div>
+        <div class="mid1"></div>
+        <div class="right1"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

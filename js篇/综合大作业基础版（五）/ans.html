@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            position: absolute;
+            width: 1440px;
+            height: 2318px;
+            background-color: white;
+            margin: 0 200px;
+
+            border: 1px solid black;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500px;
+            /* background-color: orange; */
+            background-image: url("images/city.jpeg");
+        }
+
+        #smallPro {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 250px;
+            height: 100%;
+            font-size: 25px;
+            color: white;
+            line-height: 80px;
+            /* background-color: red; */
+        }
+
+        #firstHeader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            /* opacity: 0.5; */
+        }
+
+        .headerItem {
+            float: right;
+            width: 100px;
+            height: 50px;
+            margin: 15px;
+            margin-left: 30px;
+            /* background-color: #676767; */
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            opacity: 1 !important;
+
+            /* cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 */
+            cursor: pointer;
+        }
+
+        .headerItem:nth-child(2) {
+            background-color: #676767;
+            border-radius: 5px;
+            opacity: 1 !important;
+        }
+
+        #headerText {
+            position: absolute;
+            bottom: 150px;
+            left: 100px;
+            width: 1300px;
+            height: 200px;
+            /* background-color: red; */
+
+            font-size: 62px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+        }
+
+        .mainBody {
+            /* background-color: blue; */
+            width: 1100px;
+            height: 1518px;
+
+            position: absolute;
+            top: 500px;
+            left: 150px;
+        }
+
+        #purpose {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            font-size: 35px;
+            height: 40px;
+        }
+
+        #smallBody {
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            top: 220px;
+            left: 0;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .smallItem {
+            float: right;
+            height: 250px;
+            width: 250px;
+            /* background-color: yellow; */
+        }
+
+        .smallItem p {
+            font-size: 28px;
+            height: 50px;
+        }
+
+        .smallItem img {
+            width: 100%;
+            height: 200px;
+
+            /* position: absolute;
+            bottom: 0; */
+        }
+
+        .bodyCourse {
+            height: 1040px;
+            width: 100%;
+            /* background-color: orange; */
+            position: absolute;
+            top: 430px;
+            left: 0;
+        }
+
+        #courseHeader {
+            width: 100%;
+            height: 200px;
+            /* background-color: red; */
+            line-height: 200px;
+            text-align: center;
+            font-size: 40px;
+
+            /* border: 1px solid red; */
+        }
+
+        .courseItem {
+            width: 100%;
+            height: 200px;
+            /* background-color: blue; */
+            margin-bottom: 10px;
+        }
+
+        .courseItem img {
+            float: left;
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+        }
+
+        .introduce {
+            width: 900px;
+            height: 200px;
+            float: right;
+            /* background-color: orange; */
+        }
+
+        .introduceHeader {
+            width: 100%;
+            height: 60px;
+            font-size: 35px;
+        }
+
+        .introduceText {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .courseLabel {
+            /* background-color: red; */
+            width: auto;
+            height: 50px;
+        }
+
+        .labelItem {
+            margin: 10px;
+            margin-left: 0;
+            float: left;
+            height: 30px;
+            color: white;
+            border-radius: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        /*  */
+
+        .footer {
+            position: absolute;
+            /* padding: 40px; */
+            bottom: 0;
+            left: 0;
+            background-color: #dddddd;
+            width: 100%;
+            height: 300px;
+        }
+
+        .courseItem:first-child {
+            position: absolute;
+            top: 210px;
+            left: 0;
+        }
+
+        #footTextWrap {
+            width: 250px;
+            height: 50px;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+            /* border: 1px solid black; */
+        }
+
+        .footerText {
+            float: left;
+            height: 50px;
+            width: 50px;
+            margin-right: 20px;
+            background-color: #343434;
+            border-radius: 25px;
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            /* font-weight: bold; */
+        }
+
+        .footerItem {
+            width: 150px;
+            height: 250px;
+            /* background-color: orange; */
+            float: right;
+            margin-right: 50px;
+            margin-top: 50px;
+        }
+
+        .footerItem:first-child {
+            margin-right: 100px;
+        }
+
+        .footerItem p {
+            line-height: 30px;
+
+        }
+
+        .footerHeader {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 30px;
+
+        }
+
+        #info {
+            position: absolute;
+            top: 450px;
+            left: 200px;
+            width: 1000px;
+            height: 150px;
+            border-radius: 15px;
+
+            background-color: white;
+            z-index: 99;
+
+            /* 阴影 */
+            box-shadow: -2px 1px 9px 2px grey;
+        }
+
+        #school {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 200px;
+            height: 100%;
+
+            /* background-color: blue; */
+        }
+
+        #schoolYear {
+            position: absolute;
+            top: 0;
+            left: 300px;
+            width: 200px;
+            height: 100%;
+        }
+
+        #eamil {
+            position: absolute;
+            top: 0;
+            left: 550px;
+            width: 200px;
+            height: 100%;
+        }
+
+        .infoHeader {
+            font-size: 22px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+        }
+
+        .infoInput {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            border: none;
+
+            border-radius: 5px;
+            background-color: #eeeeee;
+        }
+
+        #btn {
+            position: absolute;
+            top: 56px;
+            left: 790px;
+
+            width: 160px;
+            height: 56px;
+            border-radius: 30px;
+            background-color: #2599ee;
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            border: none;
+
+            /* cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 */
+            cursor: pointer;
+        }
+
+        .infoInput:focus {
+            background-color: white;
+        }
+
+        #btn:hover {
+            color: orange;
+        }
+
+        #courseContent {
+            position: absolute;
+            top: 120px;
+            right: 0;
+
+            width: 400px;
+            height: 80px;
+            /* background-color: red; */
+
+            border-bottom: 3px solid gray;
+        }
+
+        .contentItem {
+            float: left;
+            width: 100px;
+            height: 100%;
+            text-align: center;
+            line-height: 80px;
+            color: gray;
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        .chooseCourse {
+            font-weight: bold;
+            color: black;
+            border-bottom: 4px solid black;
+        }
+
+        .courseHide {
+            display: none !important;
+        }
+
+        .textCenter {
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+        }
+
+        .allYear {
+            position: absolute;
+            top: 110px;
+            left: 300px;
+            width: 400px;
+            height: 150px;
+            background-color: white;
+            border-radius: 10px;
+
+            display: grid;
+            grid-auto-columns: 100px;
+            grid-auto-rows: 50px;
+
+            /* 阴影 */
+            box-shadow: 1px 3px 2px grey;
+        }
+
+        .yearItem {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+
+            cursor: pointer;
+        }
+
+        .yearItem:hover {
+            color: orange;
+        }
+
+        .yearItem:nth-child(4n+1) {
+            grid-column-start: 1;
+        }
+
+        .yearItem:nth-child(4n+2) {
+            grid-column-start: 2;
+        }
+
+        .yearItem:nth-child(4n+3) {
+            grid-column-start: 3;
+        }
+
+        .yearItem:nth-child(4n+4) {
+            grid-column-start: 4;
+        }
+
+        .boldYear {
+            font-weight: bold;
+        }
+
+        #curYear:hover {
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+        #allSchool {
+            position: absolute;
+            top: 110px;
+            left: 50px;
+            background-color: white;
+
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            /* border-top: none; */
+            border-top-left-radius: 0;
+
+            z-index: 19;
+            overflow-y: auto
+        }
+
+        .chooseSchool {
+            height: 50px;
+            background-color: white;
+            border: 1px solid gray;
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            font-weight: bold;
+
+            z-index: 20;
+        }
+
+        .schoolItem {
+            margin-left: 20px;
+            width: 90%;
+            height: 43px;
+        }
+
+        .schoolItem:nth-child(1) {
+            margin-top: 15px;
+        }
+
+        .province {
+            width: 100px;
+            height: 100%;
+            float: left;
+            border-right: 1px solid gray;
+
+            text-align: center;
+            line-height: 43px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        .province:hover {
+            color: orange;
+        }
+
+        .university {
+            width: 160px;
+            height: 100%;
+            float: right;
+
+            text-align: center;
+            line-height: 43px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        .university:hover {
+            color: orange;
+        }
+
+        .boldSchool {
+            font-weight: bold;
+            color: black;
+        }
+
+        .defaultSchool {
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="info">
+            <div id="school">
+                <p class="infoHeader">选择您的学校</p>
+                <!-- <input type="text" class="infoInput" /> -->
+                <div id="curSchool" class="infoInput textCenter">
+                    中山大学
+                </div>
+            </div>
+            <div id="schoolYear">
+                <p class="infoHeader">选择您入学年份</p>
+                <div class="infoInput textCenter" id="curYear">
+                    2018
+                </div>
+            </div>
+            <div id="eamil">
+                <p class="infoHeader">选择您的电子邮箱</p>
+                <input type="text" class="infoInput" />
+            </div>
+            <button id="btn">报名</button>
+
+            <div class="allYear courseHide">
+                <div class="yearItem">2010</div>
+                <div class="yearItem">2011</div>
+                <div class="yearItem">2012</div>
+                <div class="yearItem">2013</div>
+                <div class="yearItem">2014</div>
+                <div class="yearItem">2015</div>
+                <div class="yearItem">2016</div>
+                <div class="yearItem">2017</div>
+                <div class="yearItem">2018</div>
+                <div class="yearItem">2019</div>
+                <div class="yearItem">2020</div>
+                <div class="yearItem">2021</div>
+            </div>
+
+            <div id="allSchool" class="courseHide">
+                <div class="schoolItem defaultSchool">
+                    <div class="province">广东</div>
+                    <div class="university">中山大学</div>
+                    <div class="university">华南理工大学</div>
+                    <div class="university">广东工业大学</div>
+                    <div class="university">华南师范大学</div>
+                    <div class="university">暨南大学</div>
+                    <div class="university">广州大学</div>
+                    <div class="university">广东外语外贸大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx 大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx 大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx 大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx大学</div>
+                    <div class="university">xxxxxx 大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">湖北</div>
+                    <div class="university">武汉大学</div>
+                    <div class="university">华中科技大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">湖南</div>
+                    <div class="university">中南大学</div>
+                    <div class="university">湖南大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">江苏</div>
+                    <div class="university">南京大学</div>
+                    <div class="university">东南大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">山东</div>
+                    <div class="university">山东大学</div>
+                    <div class="university">中国海洋大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">北京</div>
+                    <div class="university">北京大学</div>
+                    <div class="university">清华大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">广西</div>
+                    <div class="university">广西大学</div>
+                    <div class="university">桂林电子科技大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">福建</div>
+                    <div class="university">厦门大学</div>
+                    <div class="university">福州大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">新疆</div>
+                    <div class="university">石河子大学</div>
+                    <div class="university">新疆大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">四川</div>
+                    <div class="university">四川大学</div>
+                    <div class="university">电子科技大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">安徽</div>
+                    <div class="university">中国科学技术大学</div>
+                    <div class="university">合肥大学</div>
+                </div>
+                <div class="schoolItem defaultSchool">
+                    <div class="province">云南</div>
+                    <div class="university">云南大学</div>
+                    <div class="university">昆明理工大学</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <div id="firstHeader">
+                <div id="smallPro">智能小程序</div>
+                <div class="headerItem">管理中心</div>
+                <div class="headerItem">开源联盟</div>
+                <div class="headerItem">服务市场</div>
+                <div class="headerItem">交流中心</div>
+                <div class="headerItem">开发文档</div>
+            </div>
+            <div id="headerText">百度前端训练营2021开营了, 赶紧报名吧！</div>
+        </div>
+
+        <div class="mainBody">
+            <div class="bodyHeade1">
+                <div id="purpose">我们的宗旨</div>
+                <div id="smallBody">
+                    <div class="smallItem">
+                        <p>自律独立思考</p>
+                        <img src="./images/street.jpeg" alt="">
+                    </div>
+                    <div class="smallItem">
+                        <p>实践</p>
+                        <img src="./images/street.jpeg" alt="">
+                    </div>
+                    <div class="smallItem">
+                        <p>总结回顾</p>
+                        <img src="./images/street.jpeg" alt="">
+                    </div>
+                    <div class="smallItem">
+                        <p>分享交流</p>
+                        <img src="./images/street.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bodyCourse">
+                <div id="courseHeader">
+                    课程安排
+                </div>
+
+                <div id="courseContent">
+                    <div class="contentItem chooseCourse">全部</div>
+                    <div class="contentItem">HTML</div>
+                    <div class="contentItem">CSS</div>
+                    <div class="contentItem">JavaScript</div>
+                </div>
+
+                <div class="courseItem">
+                    <img src="./images/people.jpeg" alt="">
+                    <div class="introduce">
+                        <div class="introduceHeader">
+                            第一课 这是课程名字
+                        </div>
+                        <div class="introduceText">
+                            这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，
+                            这是课程内容的概要，这是课程内容的概要。
+                        </div>
+                        <div class="courseLabel">
+                            <div class="labelItem" style="background-color: #b0beff;">HTML</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseItem">
+                    <img src="./images/people.jpeg" alt="">
+                    <div class="introduce">
+                        <div class="introduceHeader">
+                            第二课 这是课程名字
+                        </div>
+                        <div class="introduceText">
+                            这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，
+                            这是课程内容的概要，这是课程内容的概要。
+                        </div>
+                        <div class="courseLabel">
+                            <div class="labelItem" style="background-color: #356435;">CSS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseItem">
+                    <img src="./images/people.jpeg" alt="">
+                    <div class="introduce">
+                        <div class="introduceHeader">
+                            第三课 这是课程名字
+                        </div>
+                        <div class="introduceText">
+                            这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，
+                            这是课程内容的概要，这是课程内容的概要。
+                        </div>
+                        <div class="courseLabel">
+                            <div class="labelItem" style="background-color: #364e6f;">JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courseItem">
+                    <img src="./images/people.jpeg" alt="">
+                    <div class="introduce">
+                        <div class="introduceHeader">
+                            第四课 这是课程名字
+                        </div>
+                        <div class="introduceText">
+                            这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，这是课程内容的概要，
+                            这是课程内容的概要，这是课程内容的概要。
+                        </div>
+                        <div class="courseLabel">
+                            <div class="labelItem" style="background-color: #b0beff;">HTML</div>
+                            <div class="labelItem" style="background-color: #356435;">CSS</div>
+                            <div class="labelItem" style="background-color: #364e6f;">JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+            <div id="footTextWrap">
+                <div class="footerText">I</div>
+                <div class="footerText">F</div>
+                <div class="footerText">E</div>
+            </div>
+
+            <div class="footerItem">
+                <p class="footerHeader">Links</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+                <p>技术培训中心</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+            </div>
+            <div class="footerItem">
+                <p class="footerHeader">Links</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+                <p>技术培训中心</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+            </div>
+            <div class="footerItem">
+                <p class="footerHeader">Links</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+                <p>技术培训中心</p>
+                <p>百度技术培训中心</p>
+                <p>百度技术</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let courseContent = document.getElementById("courseContent")
+    // 事件委派
+    courseContent.addEventListener("click", function (ev) {
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        // 先将courseContent的所有孩子节点的样式重置
+        let childs = courseContent.childNodes;
+        childs.forEach(element => {
+            let className = element.className;
+            // 含有chooseCourse的节点
+            if (className && className.indexOf("chooseCourse") != -1) {
+                element.classList.remove("chooseCourse")
+            }
+        })
+        // 添加chooseCourse
+        if (ev.target && target.classList.contains("contentItem")) {
+            target.classList.add("chooseCourse")
+        }
+
+        let course = target.innerText;
+        // console.log(course)
+        // 选出对应课程
+        chooseCourse(course)
+    })
+
+    // 选择课程
+    function chooseCourse(course) {
+        // 显示所有课程
+        let courseItems = document.getElementsByClassName("courseItem");
+        // console.log(courseItems)
+        for (let index = 0; index < courseItems.length; index++) {
+            let element = courseItems[index];
+            if (element.classList.contains("courseHide")) {
+                element.classList.remove("courseHide")
+            }
+        }
+
+        if (course != "全部") {
+            // 找出所有课程
+            let courseLabel = document.getElementsByClassName("courseLabel");
+            // 判断该节点课程数组是否有course
+            for (let index = 0; index < courseLabel.length; index++) {
+                let courses = courseLabel[index];
+                let curCouse = courses.childNodes;
+                // curFlag判断这个节点是否有course课程
+                let curFlag = false;
+                for (let i = 0; i < curCouse.length; i++) {
+                    let cour = curCouse[i];
+
+                    if (cour.localName == "div" && cour.innerText == course) {
+                        curFlag = true;
+                        break
+                    }
+                }
+                // 若没有course，设置该节点的父节点隐藏
+                if (!curFlag) {
+                    let parent = courses.parentElement.parentElement;
+                    parent.classList.add("courseHide")
+                }
+            }
+        }
+
+
+    }
+
+    let allYear = document.querySelector(".allYear");
+    let curYear = document.getElementById("curYear");
+
+    allYear.addEventListener("click", chooseYear);
+
+    // 选择年份
+    function chooseYear(ev) {
+        // 找出选择的年份
+        ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        if (ev.target && ev.target.classList.contains("yearItem")) {
+            let chooseYear = target.innerText;
+            curYear.innerText = chooseYear;
+
+            // 隐藏年份表
+            allYear.classList.add("courseHide")
+        }
+    }
+
+    // 弹出年份表
+    curYear.addEventListener("mouseover", function () {
+        // 隐藏年份表
+        allYear.classList.remove("courseHide")
+        let curYearText = curYear.innerText
+        // 对相应的年份进行加粗显示
+        let years = allYear.childNodes;
+        for (let index = 0; index < years.length; index++) {
+            let element = years[index];
+
+            if (element.localName == "div") {
+                element.classList.remove("boldYear")
+                if (element.innerText == curYearText) {
+                    element.classList.add("boldYear")
+                }
+            }
+        }
+    })
+
+    // 鼠标移出年份和年份表时，隐藏年份表
+    allYear.addEventListener("mouseleave", function () {
+        // 隐藏年份表
+        allYear.classList.add("courseHide")
+    })
+
+    // 弹出学校列表
+    let curSchool = document.getElementById("curSchool");
+    let allSchool = document.getElementById("allSchool");
+    curSchool.addEventListener("mouseover", function (ev) {
+        allSchool.classList.remove("courseHide")
+        curSchool.classList.add("chooseSchool")
+
+        // 先将所有学校的加粗样式去除
+        let schoolItem = document.getElementsByClassName("schoolItem");
+        for (let index = 0; index < schoolItem.length; index++) {
+            let childs = schoolItem[index].childNodes;
+            for (let i = 0; i < childs.length; i++) {
+                let child = childs[i];
+                if (child.localName == "div" && child.classList.contains("boldSchool")) {
+                    child.classList.remove("boldSchool")
+                }
+            }
+        }
+
+        // 对选中的学校进行加粗显示
+        let schoolName = curSchool.innerText;
+        let schools = document.getElementsByClassName("university");
+        for (let index = 0; index < schools.length; index++) {
+            let element = schools[index];
+            let curSchoolName = element.innerText;
+            if (curSchoolName == schoolName) {
+                let par = element.parentElement;
+                let childs = par.childNodes;
+                element.classList.add("boldSchool")
+                for (let i = 0; i < childs.length; i++) {
+                    let child = childs[i];
+                    if (child.localName == "div" && child.classList.contains("province")) {
+                        child.classList.add("boldSchool")
+                    }
+                }
+            }
+        }
+
+        // 显示所有省份
+        let childs = allSchool.childNodes;
+        for (let index = 0; index < childs.length; index++) {
+            let element = childs[index];
+            if (element.localName == "div" && element.classList.contains("schoolItem")) {
+                element.classList.remove("courseHide");
+                // 加上defaultSchool
+                element.classList.add("defaultSchool")
+            }
+        }
+
+    })
+
+    // 鼠标移出时，隐藏学校
+    allSchool.addEventListener("mouseleave", function hideSchhol() {
+        allSchool.classList.add("courseHide")
+        curSchool.classList.remove("chooseSchool")
+    })
+
+    // 隐藏学校
+    function hideSchhol() {
+        allSchool.classList.add("courseHide")
+        curSchool.classList.remove("chooseSchool")
+    }
+
+    allSchool.addEventListener("click", function uniClick(ev) {
+        ev = ev || window.ev;
+        let target = ev.target || ev.srcElement;
+        // 学校的点击选择
+        if (ev.target && ev.target.classList.contains("university")) {
+            curSchool.innerText = target.innerText;
+            hideSchhol();
+        }
+
+        // 省份的选择
+        if (ev.target && ev.target.classList.contains("province")) {
+            hideProvince(target)
+        }
+
+    })
+
+    // 省份隐藏
+    function hideProvince(target) {
+        // 将其余省份隐藏
+        let curPar = target.parentElement;
+        let childs = allSchool.childNodes;
+
+        for (let index = 0; index < childs.length; index++) {
+            let element = childs[index];
+            if (element.localName == "div" && element.classList.contains("schoolItem")) {
+                element.classList.add("courseHide");
+            }
+        }
+
+        curPar.classList.remove("courseHide");
+        // 将对应省份的 overflow去除
+        curPar.classList.remove("defaultSchool")
+    }
+
+</script>
+
+</html>
